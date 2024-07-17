@@ -1,0 +1,67 @@
+package com.hibernate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="clientes")
+public class Clientes {
+	
+	@Column
+	private String nombre;
+	
+	@Column
+	private String apellido;
+	
+	@Column
+	private String direccion;
+	
+	@GeneratedValued(strategy=GenerationType.IDENTITY);
+	@Id
+	@Column
+	private int id;
+	
+	
+	public Clientes(String nombre, String apellido, String direccion) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Clientes[id= "+id+" , nombre= "+nombre+" , apellidos="+ apellidos + " , direccion = " + direccion + " , +"];
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	
+	
+
+	
+	
+}

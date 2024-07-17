@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_191"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-aop-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-aop-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-aop-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-aspects-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-aspects-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-aspects-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-beans-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-beans-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-beans-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-indexer-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-indexer-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-indexer-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-support-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-support-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-context-support-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-core-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-core-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-core-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-expression-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-expression-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-expression-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-instrument-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-instrument-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-instrument-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jcl-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jcl-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jcl-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jdbc-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jdbc-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jdbc-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jms-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jms-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-jms-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-messaging-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-messaging-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-messaging-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-orm-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-orm-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-orm-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-oxm-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-oxm-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-oxm-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-test-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-test-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-test-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-tx-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-tx-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-tx-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-web-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-web-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-web-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-webflux-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-webflux-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-webflux-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-webmvc-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-webmvc-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-webmvc-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-websocket-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-websocket-5.1.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dell/Downloads/spring_jar_files_pildoras/spring jar files pildoras/spring-websocket-5.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

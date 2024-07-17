@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\dell\Desktop\Practicas_JAVA_2024_WEB\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2557059707.index
+1731131806.index
+3759149391.index
+1623697885.index
+2076792081.index
+3892417750.index
+2783408972.index

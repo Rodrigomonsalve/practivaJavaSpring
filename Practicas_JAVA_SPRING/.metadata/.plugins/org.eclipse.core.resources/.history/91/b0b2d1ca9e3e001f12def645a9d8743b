@@ -1,0 +1,13 @@
+package es.pildoras.spring.mvc;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Controlador {
+	
+	@RequestMapping
+	public String muestraPagina() {
+		return "paginaEjemplo";
+	}
+
+}

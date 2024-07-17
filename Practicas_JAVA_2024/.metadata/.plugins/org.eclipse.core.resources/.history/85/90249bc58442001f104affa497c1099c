@@ -1,0 +1,10 @@
+package com.hibernate;
+
+public class GuardaClientes {
+	
+	public static void main(String [] args) {
+		
+		SessionFactory miFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotated Class(Clientes.class).buildSessionFactory();
+	}
+
+}

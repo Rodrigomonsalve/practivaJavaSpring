@@ -1,0 +1,18 @@
+package com.cyberslex.MVC_Maven.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
+public class ControladorMyLogin {
+	
+	@GetMapping("/")
+	public String muestraLoginPropio() {
+		
+		return "loginPropio";
+	}
+	
+	@RequestMapping
+	
+
+}

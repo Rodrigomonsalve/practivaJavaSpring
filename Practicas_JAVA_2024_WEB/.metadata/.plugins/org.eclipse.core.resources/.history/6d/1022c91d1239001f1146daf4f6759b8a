@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<%
+
+//Este código sólo tiene como finalidad utilizar las cookies que fueron creadas en otro código.
+
+String ciudad_favorita="Madrid";
+
+
+//Con esta líenea se traen los valores de la cookies, se traiga algún valor del navegador o no, porque la cookie que siempre se va a crear, por default, es una que tiene por nombre JSESSIOND cuyo valor se crea también de forma automática.
+//El JSESSIONID sirve, en Java, para vincular al usuario con una sesión.
+//Si logra traerse algo den navegador, traerá, entonces 2 cookies (cada una con su nombre y valor). La otra será la que hayamos creado nosotros mismos como desarrolladores.
+//La cookie que nosotros hayamos creado como desarrolladores se guardará en el navegador del usuario por el tiempo que nosotros determinemos. Cada que el usuario abra el mismo sitio, éste podrá usar ese valor.
+//Las ccokies se crean aparte, en otro archivo jsp.
+Cookie[] lasCookies = request.getCookies();
+
+if(lasCookies != null){
+//Esta también es una forma en la que podemos obtener el valor de las cookies.	
+
+	for(Cookie cookie_temporal : lasCookies){
+		
+		out.print("Cookies:" + cookie_temporal.getName());
+		out.print("Value:" + cookie_temporal.getValue());
+			if("agencia_viajes.ciudad_favorita".equals(cookie_temporal.getName())){
+				ciudad_favorita = cookie_temporal.getValue();
+				break; 
+		} 
+	}
+}
+
+%>
+
+<h3>Vuelos a<%= ciudad_favorita %></h3>
+<h3>Hoteles en <%= ciudad_favorita %></h3>
+
+</body>
+</html>

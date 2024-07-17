@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd">  <!-- Estas etiquetas (xmlns) sirven para que el procesador de XML puedan localizar las etiquetas que se usan en este documento -->
+
+<context:component-scan base-package="spring.vanlla.mc"/> <!-- En este paquete se buscarán componentes. Hay que recordar que Spring cuenta con un contenedor de Beans, para la inversión de control e inyección de dependencias. Ahora ese contenedor ya no es accesible, pero Spring busca estos beans en el paquete que se mencione aquí.  -->
+
+<mvc:annotation-driven/>
+
+<bean 
+	class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+	
+	<property name="prefix" value="/WEB-INF/> <!-- Aquí están las vistas -->
+	<property name="suffix" value=".jsp"/> <!-- Este el el tipo de archivo en el que se confeccionan las vistas -->
+	
+</bean>
+
+<!--  <mvc:resources location="/recursos/" mapping="/recursos/**"></mvc:resources> -->	<!-- Aqué están los recursos como css e imágenes -->
+
+</beans>

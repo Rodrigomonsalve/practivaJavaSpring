@@ -1,0 +1,5 @@
+package com.cyberslex.CRUD.config;
+
+public class ConectaCrud {
+
+}

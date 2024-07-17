@@ -1,0 +1,5 @@
+package com.cyberslex.MVC_Maven.controller;
+
+public class Alumno {
+
+}

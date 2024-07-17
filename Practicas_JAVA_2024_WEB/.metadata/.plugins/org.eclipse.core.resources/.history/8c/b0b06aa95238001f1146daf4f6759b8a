@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
+<%@ page import="java.util.*, java.sql.*, practica1.Empleado" %>
+
+<!--  UNA DE LAS COSAS QUE PODEMOS VER EN ESTE CÓDIGO ES QUE PODEMOS METER LOS SCRIPTLETS TANTO DENTRO DEL BODY DE UN HTML, COMO FUERA DE CUALQUIER ESTRUCTURA HTML, COMO LO VEMOS EN ESTE CASO.-->
+
+<%
+
+ArrayList<Empleado> datos = new ArrayList<Empleado>();
+
+Class.forName("com.mysql.jdbc.Driver");
+
+try{
+	
+	Connection myConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pruebas", "root", "");
+	
+	Statement miSentencia = myConexion.createStatement();
+	
+	String miQuery = "SELECT * FROM EMPLEADOS";
+	
+	ResultSet rs = miSentencia.executeQuery(miQuery);
+	
+	
+	while (rs.next()){
+		datos.add(new Empleado(rs.getString(1), rs.getString(2), rs.getString(3), rs.getDouble(4)));	
+	}
+	
+	rs.close();
+	myConexion.close();
+	
+}catch(Exception e){
+	e.printStackTrace();
+	out.print("Hubo un error");
+}
+
+pageContext.setAttribute("losEmpleados", datos);
+
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table border="1">
+
+<tr>
+	<td>Nombre</td>
+	<td>Apellido</td>
+	<td>Puesto</td>
+	<td>Salario</td>
+</tr>
+
+<c:forEach var="EmpTemp" items="${datos}">
+
+<tr>
+	<td>${EmpTemp.nombre}</td>
+	<td>${EmpTemp.apellido}</td>
+	<td>${EmpTemp.puesto}</td>
+	<td>${EmpTemp.salario}<td>
+	
+	<c : if test="${EmpTemp.salario<4000}">
+		${EmpTemp.salario+5000}
+	</c : if>
+	
+	<c : if test = "${EmpTemp.salario>=4000}">
+		${EmpTemp.salario}
+	</c : if>	
+	
+		
+</tr>
+
+
+
+
+</c:forEach>
+
+
+</table>
+
+
+
+</body>
+</html>

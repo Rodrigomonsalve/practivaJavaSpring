@@ -1,0 +1,11 @@
+package com.mvc.vanilla;
+
+@Controller
+public class PrincipalControlador {
+	
+	@RequestMapping
+	public String muestraPagina() {
+		return "paginaPrincipal";
+	}
+
+}

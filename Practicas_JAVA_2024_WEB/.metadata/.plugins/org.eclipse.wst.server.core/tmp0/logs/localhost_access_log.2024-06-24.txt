@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:02:56:36 -0500] "GET /Practica_2024/Objetos_predefinidos.html HTTP/1.1" 200 383
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:02:56:36 -0500] "GET /robots.txt?477559 HTTP/1.1" 404 697
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:02:56:47 -0500] "GET /robots.txt HTTP/1.1" 404 697
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:03:10:52 -0500] "GET /Practica_2024/Objetos_predefinidos.html HTTP/1.1" 200 519
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:03:10:54 -0500] "GET /robots.txt HTTP/1.1" 404 697
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:03:11:48 -0500] "GET /Practica_2024/Objetos_predefinidos.html HTTP/1.1" 200 523
+0:0:0:0:0:0:0:1 - - [24/Jun/2024:03:11:49 -0500] "GET /robots.txt HTTP/1.1" 404 697

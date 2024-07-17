@@ -1,0 +1,13 @@
+package spring.vanilla.mvc;
+
+@Controller
+public class HolaAlumnosController {
+	
+	@RequestMapping
+	public String HolaAlumnos() {
+		return "HolaAlumnosInicio";
+	}
+	
+	
+
+}

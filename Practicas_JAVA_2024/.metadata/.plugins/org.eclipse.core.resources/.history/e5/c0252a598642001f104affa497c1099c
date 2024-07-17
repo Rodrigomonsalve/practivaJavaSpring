@@ -1,0 +1,22 @@
+package com.hibernate;
+
+
+@Entity
+@Table(name="clientes")
+public class Clientes {
+	
+	
+	private String nombre;
+	private String apellido;
+	private String direccion;
+	
+	public Clientes(String nombre, String apellido, String direccion) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+	}
+
+	
+	
+}

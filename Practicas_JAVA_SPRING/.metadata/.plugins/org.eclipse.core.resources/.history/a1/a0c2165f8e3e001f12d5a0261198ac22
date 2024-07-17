@@ -1,0 +1,5 @@
+package spring.vanilla.mvc;
+
+public class HolaAlumnosController {
+
+}

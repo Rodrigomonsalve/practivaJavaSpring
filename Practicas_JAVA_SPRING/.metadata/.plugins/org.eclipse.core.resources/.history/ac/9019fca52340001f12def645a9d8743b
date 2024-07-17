@@ -1,0 +1,42 @@
+package com.cyberslex.MVC_Maven.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+// Resulta trascendental observar que en ningún momento, para ejecutar los métodos de una clase controladora, 
+
+@Controller
+public class ControladorMyLogin {
+	
+	@GetMapping("/")
+	public String muestraLoginPropio() {
+		
+		return "loginPropio";
+	}
+	
+	@RequestMapping("/procesaFormulario2")
+	public String procesoFormulario(HttpServletRequest request, Model modelo) {
+		
+		String nombre = request.getParameter("nombreAlumno");
+		
+		nombre += "es el mejor alumno";
+		
+		String mensajeFinal = "¿Quién es el mejor alumno?" + nombre;
+		
+		modelo.addAttribute("mensajeClaro", mensajeFinal);
+		
+		return "HolaAlumnosSpring";
+		
+	}
+	
+	@RequestMapping("/muestraFormulario")
+	public String muestraFormulario() {
+		return "HolaAlumnosFormulario";
+	}
+	
+	
+
+}
