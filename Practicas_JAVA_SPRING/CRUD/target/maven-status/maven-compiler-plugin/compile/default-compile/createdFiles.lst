@@ -1,0 +1,7 @@
+com\cyberslex\CRUD\dao\ClienteDAOClase.class
+com\cyberslex\CRUD\controller\ClienteControlador.class
+com\cyberslex\CRUD\config\ConectaCrud.class
+com\cyberslex\CRUD\dao\ClienteDAO.class
+com\cyberslex\CRUD\config\MyServletSpringInitializer.class
+com\cyberslex\CRUD\config\App.class
+com\cyberslex\CRUD\entity\Clientes.class

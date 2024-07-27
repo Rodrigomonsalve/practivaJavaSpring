@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+//ESTE CÓDIGO NO SE USA. TODA LA CONEXIÓN A BASE DE DATOS SE ENCUENTRA EN EL CONTENDOR DE BEANS(SPRING-CRUD-SERVLET.XML)
+
+
 @WebServlet("/ServletBD")
 public class ConectaCrud extends HttpServlet {
 	
