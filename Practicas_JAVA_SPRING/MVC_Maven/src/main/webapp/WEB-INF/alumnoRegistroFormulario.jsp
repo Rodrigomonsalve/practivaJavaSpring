@@ -13,14 +13,15 @@
 
 <!-- RELACIONADO AL TEMA DE MVC TAGS. ESTE ES CÓDIGO QUE SE INTENTA EXPLICAR -->
 <!--  Las MVC tags ayudan a crear estructras dentro del modelo vista controlador -->
-<!--  En este caso nos ayuda a llenar un objeto (Alumno) mediante el uso de un formulario, y enviarlo al servidor lleno. Normalment se usaría una lista creado con request.getParamValues, pero no nos trae obetos con variable-valor -->
+<!--  En este caso nos ayuda a llenar un objeto (Alumno) mediante el uso de un formulario, y enviarlo al servidor lleno. Normalmente se usaría una lista creada con request.getParamValues, pero no nos trae obetos con variable-valor -->
 <!-- No es lo mismo que JSP tags. -->
 <body>                                                                        
-	<form:form action="/MVC_Maven/alumno/procesaFormulario" modelAttribute="elAlumno">  <!-- form:form es una MVC Tag, y usa el atributo modelAttribute para enviar informacón más fácil al servidor -->
+	<form:form action="/MVC_Maven/alumno/procesaFormulario" modelAttribute="elAlumno">  <!-- form:form es una MVC Tag, y usa el atributo modelAttribute para enviar información más fácil al servidor -->
 		
 		Nombre:<form:input path="nombre"/>		<!-- En el atributo path, debe ir la variable del objeto en la cual se guardará el valor. Es el nombre de los métodos setter y getter sin e set o get y con minúscula -->
 			<form:errors path="nombre" style="color:red"/>							
 			<br>									<!--  Se realiza lo anterior, porque al aparcer el formulario en panatlla se invocan los métodos getters y cuando se envía la información se ejecutan los métodos setters, en este caso, de la clase Alumno -->
+													<!-- De este modo, si el objeto "elAlumno" ya viniera lleno, aparecerían los valores en pantalla dentro de los inputs. En nuestro caso, derivado de que viene vacío, los inputs se ven vacíos  -->
 		
 		Apellido:<form:input path="apellido"/>
 			<br>
