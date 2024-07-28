@@ -10,14 +10,14 @@
 </head>
 <body>
 
-<form:form action="insertaCliente" modelAttribute="cliente" method="POST">
+<form:form action="insertarCliente" modelAttribute="cliente" method="POST">  <!-- Hay que recordar que si trabajamos con modelAtrribute se invocará automáticamente los métodos getters de la entidad de forma automática. En nuestro caso, si viene el objeto lleno se mostrarán los valores en pantalla (para que puedan ser modificados); si viene vacío sólo se moestraá el input vacío -->
 
 <form:hidden path="id"/>
 
 	<table>
 		<tr>
 			<td>Nombre</td>
-			<td><form:input path="nombre"/></td></tr>
+			<td><form:input path="nombre"/></td>
 		</tr>
 		
 		<tr>

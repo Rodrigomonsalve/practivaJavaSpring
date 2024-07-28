@@ -45,7 +45,7 @@ public class ClienteControlador {
 		
 		elModelo.addAttribute("cliente", elCliente);
 		
-		return "formularioCliente";
+		return "fomularioCliente";
 	}
 	
 	
@@ -58,6 +58,8 @@ public class ClienteControlador {
 	}
 	
 	
+	
+	
 	@GetMapping("/muestraFormularioActualizar")
 	public String muestraFormularioActualizar(@RequestParam("clienteId") int Id, Model elModelo) {
 		
@@ -65,8 +67,10 @@ public class ClienteControlador {
 		
 		elModelo.addAttribute("cliente", elCliente);
 		
-		return "formularioCliente";
+		return "fomularioCliente";
 	}
+	
+	
 	
 	
 

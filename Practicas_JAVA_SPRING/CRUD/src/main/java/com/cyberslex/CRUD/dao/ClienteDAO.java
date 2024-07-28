@@ -8,7 +8,7 @@ import com.cyberslex.CRUD.entity.Clientes;
 
 //Un DAO son las clases que pertenecen a la capa de acceso a datos. Es en donde se encuentran las operaciones de consulta, inserción, modificació o elimincación de datos de una base de datos.
 
-@Repository
+@Repository //La anotación @Repository funciona igual que @Component pero para trabajar con CRUDS.
 public interface ClienteDAO {
 	
 	public List<Clientes> getCliente();
