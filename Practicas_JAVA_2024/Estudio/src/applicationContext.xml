@@ -11,6 +11,10 @@
 		<context:component-scan base-package="com.cyberslex"></context:component-scan> 
 		
 		
+		<!--ES TRASCENDENTAL ENTENDER LA LÓGICA DE ESTE DOCUMENTO, AQUNQUE DESPÚES YA NO SE USE-->
+		<!--UNA DE LAS IMPORTANCIAS RADICA EN QUE SI QUEREMOS AHORA USAR DIRECTOREMPLEADO EN ALGUNA OTRA CLASE, DIRECTOREMPLEADO FORZOSAMENTE DEBE INYECTARSE DE LA MISMA FORMA EN QUE SE INYECTÓ MIINFORME EN DIRECTOREMPLEADO. SI SÓLO LA INSTANCIAMOS, PROVOCARIAMOS QUE NO SE ENCONTRARA MIINFORME Y SU COMPORTAMIENTO SERÍA ERRÓNEO. ES COMO UNA CADENA  -->
+		
+		
 		<bean id="miInforme" class="com.cyberslex.Informe"></bean>  <!-- En esta línea estamos creando un bean, excatamente igual que como lo hicimos con el siguiente (DirectorEmpleado). En esta caso nos va a servir para invertir el control en las clases en las que se instancie, y para inyectarlo en contadorEmpleado.-->		
 		
 		<bean id="miEmpleado" class="com.cyberslex.DirectorEmpleado" init-method="metodoInit" destroy-method="metodoFinal"> <!-- La clase que nosotros definamos aquí va a ser el tipo de objeto que vamos a estar instanciando en las clases respectivas utilizando la palabra "miEmpleado". Para cambir el tipo de objeto, basta con hacerlo en esta parte de este documento.-->

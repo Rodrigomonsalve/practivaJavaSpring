@@ -1,0 +1,23 @@
+package com.cyberslex.API_REST_COMPLETO.controller;
+
+
+public class EmpleadoException extends RuntimeException {
+
+	public EmpleadoException(String arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+	public EmpleadoException(Throwable arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+	public EmpleadoException(String message, Throwable cause) {
+		super(message, cause);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+}

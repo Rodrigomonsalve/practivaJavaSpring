@@ -7,11 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 // INSERCIÓN
+//En este proyecto estamos usando JDBC(Java Database Connectivity) que es el otro nombre para la librería mysql-connector-java. No es está utilizando nada más.
 
 public class Transacciones {
 	
 	//Una transacción es un conjunto de varias senetencias SQL (DML) trabajando entre sí.
 	//En las clases Base_de_datos.java sólo usamos una sola sentencia.
+	
 	
 	public static void main (String [] args) {
 		

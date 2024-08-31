@@ -4,6 +4,7 @@ import java.sql.*;
 
 
 //CONSULTA
+//En este proyecto estamos usando JDBC(Java Database Connectivity) que es el otro nombre para la librería mysql-connector-java. No es está utilizando nada más.
 
 public class Base_de_datos {
 	

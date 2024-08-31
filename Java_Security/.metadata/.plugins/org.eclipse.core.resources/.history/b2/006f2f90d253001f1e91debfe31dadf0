@@ -1,0 +1,42 @@
+package com.cyberslex.API_REST_COMPLETO.controller;
+
+import java.util.*;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cyberslex.API_REST_COMPLETO.entity.Empleado;
+
+@RestController
+@RequestMapping("/api")
+public class EmpleadoRestController {
+	
+	private List<Empleado> losEmpleados;
+	
+	
+	
+	@PostConstruct
+	public void cargaDatos() {
+		
+		losEmpleados=new ArrayList<>();   //Hay que recordar que las lista, antes de manipularlas, se deben inicializar.
+		losEmpleados.add(new Empleado("Juan", "Diaz"));
+		losEmpleados.add(new Empleado("Martha", "Gonzalez"));
+		losEmpleados.add(new Empleado("Carlos", "Mendez"));
+		losEmpleados.add(new Empleado("Fede", "Mendiola"));
+		
+	}
+	
+	
+	@GetMapping("/empleados")   //En este caso estamos utilizando la anotación @RestController y no @Controller, lo que implica que el método respectivo, en este caso, getEmpleado ya no busca una vista (jsp), sino que devuelve estrictamente lo que tú devuelvas en el método. Si devuelve un string, mostrará la leyenda en el navegador. 
+	public List<Empleado> getEmpleado(){  //En nuestro caso estamos devolviendo una lista. Esta lista es visible, con ayuda de jackson-databind, en formata json en el navegador.
+		
+
+		return losEmpleados;
+		
+	}
+
+}

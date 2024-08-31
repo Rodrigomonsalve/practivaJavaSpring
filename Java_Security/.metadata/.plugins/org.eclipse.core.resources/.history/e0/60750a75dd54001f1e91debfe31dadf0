@@ -1,0 +1,5 @@
+package com.cyberslex.API_REST_COMPLETO.controller;
+
+public class EmpleadoRespuestaError {
+
+}

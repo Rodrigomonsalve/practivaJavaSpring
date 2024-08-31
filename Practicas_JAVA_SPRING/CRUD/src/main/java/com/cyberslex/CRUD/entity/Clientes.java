@@ -9,8 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-//No es posible insertar valores en la base de datos si no hay una columna definida como id (identifier) desde este código. Sin embargo, en la base de datos puede que ninguna columna sea llave primaria.
+// No es posible insertar valores en la base de datos si no hay una columna definida como id (identifier) desde este código. Sin embargo, en la base de datos puede que ninguna columna sea llave primaria.
 // A pesar de lo anterior, si la base de datos no tiene definida una llave primaria, todos los valores que le enviemos tendrán valor de 0.
+// Los métodos getters y setters son esenciales en las entidades porque se ejecutan automáticamente cuando se realiza una consulta a la base de datos. Si no se ponen, aunque no se invoquen de forma expresa, no arroja error porque la conexión es correcta, pero no arrojará ningùn resultado.
 
 @Entity
 @Table(name="clientes")

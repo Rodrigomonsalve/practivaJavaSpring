@@ -10,7 +10,7 @@
 <body>
 
 <!-- El código Java que se encuentra en archivos jsp se ejecutan automáticamente cuando se invoca el archivo jsp -->
-<!-- En el body también puede ir còdigo html como formularios antes o después de declrar un scriptlet, expresiones o declaraciones JSP. También puede ir en un achivo aparte -->
+<!-- En el body también puede ir còdigo html como formularios antes o después de declarar un scriptlet, expresiones o declaraciones JSP. También puede ir en un achivo aparte -->
 <!-- Es lógico que TODO código Java dentro de archivos jsp también puede crearse en archivos java por separado -->
 
 <%! // Esto es una Declaración. Se utiliza para declarar métodos y variables. Debe cumplir con sintaxis Java. Sin embargo, no se deben declarar clases.

@@ -1,0 +1,22 @@
+{
+									"_comment":"En este ejemplo, el json ya lo prefabricamos. Por lo tanto, lo único que se va a estudiar en este proyecto es cómo transformar el contenido de un JSON a un objeto en Java. Para esto nos ayuda la librería Jackson-Databind ",
+"id":3,
+"nombre":"Juan",
+"apellido":"Diaz",
+"activo":true,
+									"_comment2":"ESTE ES EL ESTANDAR CORRECTO PARA REALIZAR COMENTARIOS EN JSON ",
+									"comment3":"Es esencial que un archivo JSON se encuentre codificado en UTF-8. Esto se puede configurar en las propiedades del archivo. De lo contrario habrá problemas para transformar la información con caracteres especiales, como acentos, eñes, y otros",
+"idiomas":["Español", "Ingles"],  
+"edad":37,
+
+"datos_registro":{
+
+	"domicilio":"Gran Via 25",
+	"ciudad":"Madrid",
+	"codigo_postal":"04800"
+
+
+}
+
+
+}

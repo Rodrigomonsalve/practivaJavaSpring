@@ -2,6 +2,9 @@ package practica3;
 
 import java.util.*;
 
+
+//En este proyecto estamos usando JDBC(Java Database Connectivity) que es el otro nombre para la librería mysql-connector-java. No es está utilizando nada más.
+
 public class Collections {
 	
 	//Todo objeto puede ser casteado a Lista.
@@ -11,9 +14,9 @@ public class Collections {
 	 
 	 
 	 public static void Lista() {
-		 dulces.add("tamarindo");
-		 dulces.add("Ate");
-		 dulces.add("Cereza");
+		 dulces.add("tamarindo");  //Para que puedas manipular una lista, forzosamente debe estar inicializada:
+		 dulces.add("Ate");			//	 static ArrayList<String> dulces;  ---> esta bien declarada, pero al manipularla (agregarle un elemento) da un error de null pointer exception
+		 dulces.add("Cereza");		// 	static ArrayList<String> dulces = new ArrayList<String>(); ---> Forma correcta
 		 System.out.println(dulces.size());
 		 System.out.println(dulces.get(1));
 		 System.out.println(dulces.contains("Churro"));

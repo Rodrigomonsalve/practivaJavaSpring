@@ -28,6 +28,12 @@
 																					<!-- Es trascendental notar que la etiqueta completa c:url también se itera, por lo que cada clienteTemp.id también lo hace, al igual que los demás elementos de la lista, con la única diferencia en que clienteTemp.id no se ve en pantalla, porque no está dentro de etiquetas <td> -->
 			<c:param name="clienteId" value="${clienteTemp.id}"/>  					<!-- El valor de clienteTemp.id viaja al coontrolador, como parámetro de la url, a la url /cliente/muestraFormularioActualizar y allá se recupera mediante la anotación RequestParam -->
 			
+		</c:url>
+		
+		<c:url var="linkEliminar" value="/cliente/eliminar">
+		
+			<c:param name="clienteId" value="${clienteTemp.id}"></c:param>
+		
 		</c:url>	
 		
 		<tr>
@@ -40,6 +46,12 @@
 					<input type="button" value="Modificar"/> <!-- Para lograr lo anterior, hay que notar que el id, en realidad está en el frontend ya, dentro de item clientes. Sólo hay que pasarlo al backend (Controlador) -->
 				</a>
 			</td>	
+			
+			<td>
+				<a href="${linkEliminar}">
+					<input type="button" value="Eliminar"/>
+				</a>
+			</td>
 		
 		</tr>
 

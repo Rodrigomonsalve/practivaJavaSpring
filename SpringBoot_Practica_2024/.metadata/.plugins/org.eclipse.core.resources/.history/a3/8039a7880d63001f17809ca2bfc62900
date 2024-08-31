@@ -1,0 +1,5 @@
+package com.cyberslex.api.repository;
+
+public class PersonaRepository {
+
+}

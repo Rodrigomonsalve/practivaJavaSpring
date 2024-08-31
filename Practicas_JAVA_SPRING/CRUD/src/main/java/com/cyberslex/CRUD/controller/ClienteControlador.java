@@ -70,6 +70,14 @@ public class ClienteControlador {
 		return "fomularioCliente";
 	}
 	
+	@GetMapping("/eliminar")
+	public String eliminarCliente(@RequestParam("clienteId") int Id) {
+		
+		clienteDAO.eliminarCliente(Id);
+		
+		return "redirect:/cliente/lista";
+	}
+	
 	
 	
 	

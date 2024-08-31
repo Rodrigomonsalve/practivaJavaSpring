@@ -1,3 +1,5 @@
 INDEX VERSION 1.131
 C:\Users\dell\Desktop\Practicas_JAVA_2024_WEB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2076792081.index
 \Practica_2024\src\main\java
+C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_2024_WEB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2076792081.index
+\Practica_2024\src\main\java

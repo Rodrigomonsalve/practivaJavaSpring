@@ -2,9 +2,13 @@ package com.hibernate;
 
 import java.util.List;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+
+//EN UN MVC ESTAS OPERACIONES SE ENCUENTRAN DIVIDIDAS ENTRE CONTROLADOR Y CLASES DAO. 
 
 public class CientesConsulta {
 	
@@ -25,7 +29,7 @@ public static void main(String [] args) {
 			for(Clientes unCliente : losClientes) {
 				
 				System.out.println(unCliente);
-				System.out.println("Te traje todos los clientes");  //Imprime todo el contendio de la tabla.
+				System.out.println("Te traje todos los clientes");  //Imprime todo el contendio de la tabla. En un CRUD ya no será necesario hacer esto, puesto que esto se hace en la vista.
 			}
 			
 			

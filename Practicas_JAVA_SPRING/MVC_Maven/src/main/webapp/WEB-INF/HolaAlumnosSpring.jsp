@@ -10,6 +10,7 @@
 
 <!-- Considero que este código podría funcionar mejor como una sesión, utilizando sus métodos -->
 <!-- param.nombreAlumno y mensajeClaro tienen funcionalidades similares. -->
+<!-- Ambos funcionan de forma muy similar, pero uno es petición GET (la información pasa a través de la URL) (RequetParam) y en la otra es una petición POST (la información viaja a través de la cabecera http)( Model)-->
 
 Hola ${param.nombreAlumno} Bienvenido al curso <!-- param sirve para traer información ingresada por algùn usuario en una vista. En este caso, nombreAlumno es el name del input -->
 

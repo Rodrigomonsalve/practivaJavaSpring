@@ -1,0 +1,11 @@
+package com.cyberslex.api.service;
+
+public class IBaseService<E> {
+	
+	public List<E> findAll() throws Exception;
+	
+	public E findById(long Id) trhows Exception;
+	
+	public E save(E entity) throws Exception;
+	
+}

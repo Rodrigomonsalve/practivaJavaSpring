@@ -7,7 +7,10 @@
 <%@ page import="java.util.*, java.sql.*, practica1.Empleado" %>
 
 <!--  UNA DE LAS COSAS QUE PODEMOS VER EN ESTE CÓDIGO ES QUE PODEMOS METER LOS SCRIPTLETS TANTO DENTRO DEL BODY DE UN HTML, COMO FUERA DE CUALQUIER ESTRUCTURA HTML, COMO LO VEMOS EN ESTE CASO.-->
-<!-- La función de  las jsp tags son ejecutar funcionalidades de java dentro de código html. No es lo mismo que jsp puro, dado que éste es declarar código java puro dentro de html, mientras que las jso tags fusionan ambos códigos. Se podría decir que es html con la potencia de java. Es java con la estructura visual de html-->
+<!-- La función de  las jsp tags son ejecutar funcionalidades de java dentro de código html. No es lo mismo que jsp puro, dado que éste es declarar código java puro dentro de html, mientras que las jsp tags fusionan ambos códigos. Se podría decir que es html con la potencia de java. Es java con la estructura visual de html. Es como utilizar la funcionalidad de javascript-->
+<!-- Las jsp tags vinen en http://java.sun.com/jsp/jstl/core .No son lo mismo que las mvc tags -->
+<!-- Si no fuera por las jsp tags no podríamos utilizar lógica de programación en el frontend, tal y como lo podemos hacer con Javascript -->
+
 <%
 
 ArrayList<Empleado> datos = new ArrayList<Empleado>();
@@ -37,7 +40,7 @@ try{
 	out.print("Hubo un error");
 }
 
-//Se utiliza para poder utilizar el array datos fuera de una estructura java, en este caso, HTML. 
+//Se utiliza para poder usar el array "datos" fuera de una estructura java, en este caso, HTML, utilizando jsp tags. 
 pageContext.setAttribute("losEmpleados", datos);
 
 String cadena = "<h2>Hola</h2>";
@@ -66,7 +69,7 @@ out.print(cadena);
 
 
 <!-- La etiqueta peso-corchetes sirve para utilizar datos provenientes de código Java-->
-<c:forEach var="EmpTemp" items="${losEmpleados}">   <!-- EmpTemp la creamos nosotros de forma arbitraria -->
+<c:forEach var="EmpTemp" items="${losEmpleados}">   <!-- EmpTemp la creamos nosotros de forma arbitraria --> <!-- losEmpleados es un array que proviene desde Java. No importa de qué forma lo trajimos. En este caso fue utilizando el método "pageContext.setAttribute". Sin embargo, lo podemos traer de otra forma, como a través del método elModelo.addAttribute, que nos sirve para traer datos del server(Controlador) a la vista (jsp)   -->
 
 <tr>
 	<td>${EmpTemp.nombre}</td>

@@ -1,0 +1,39 @@
+package com.cyberslex.api.service;
+
+import java.util.List;
+
+import com.cyberslex.api.entity.Persona;
+
+public class PersonaService implements IBaseService<Persona> {
+
+	@Override
+	public List findAll() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Persona findById(long Id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Persona save(Object entity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object update(Long id, Object entity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean delete(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

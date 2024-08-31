@@ -29,6 +29,16 @@ public class ClasesYmetodos {
 
 }
 	
+	public Empleados pruebaObjeto() {    
+		
+		Empleados empleado1 = null;
+		empleado1 = new Empleados();
+		Empleados empleado = new Empleados();
+		new Empleados();          // Es otra forma de instanciar Empleados.
+		
+		return new Empleados();   //Las lñineas anteriores las podemos ahorrar, simplemente retornando un objeto de tipo Empleados.
+	}
+	
 	public static int Cadena(int numero1, int numero2){
 		
 		variable = numero1 + numero2;

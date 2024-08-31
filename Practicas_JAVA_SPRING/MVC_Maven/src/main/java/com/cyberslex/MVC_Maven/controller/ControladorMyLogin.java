@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class ControladorMyLogin {   //La raíz es: /nombreproyecto/  La última diagonal es la diagonal indicada en el RequestMapping
 	
 	@GetMapping("/")   // Es la forma de hacer aparecer una página, como la de inicio, es decir, con sólo ejecutar el código del proyecto.
-	public String muestraLoginPropio() {
+	public String muestraLoginPropio() {  //Sin embargo, no es necesario crear un método controlador para una página de inicio, pues esta se podría ejecutar automáticamente si creamos un index.jsp dentro de la carpeta webapp.
 		
 		return "loginPropio";
 	}
@@ -43,7 +43,7 @@ public class ControladorMyLogin {   //La raíz es: /nombreproyecto/  La última 
 	// El siguiente método es exactamente igual que el anterior que está comentado.
 	@RequestMapping("/procesaFormulario2")
 	public String procesaFormulario(@RequestParam("nombreAlumno") String nombre, Model modelo) {  //La anotación @RequestParam es exactamente igual a "request.getParameter". Debe ir en los parámetros. Ya está ingresando el valor directamente por los argumentos.
-		
+																								// Con @RequestParam el valor desde el front end pasa al servidor (backend) a través de la url (http://localhost:8085/MVC_Maven/procesaFormulario2?nombreAlumno=Rodrigo). Esto es una petición GET.
 		nombre += "es el mejor alumno";
 		
 		String mensajeFinal = "¿Quién es el mejor alumno?" + nombre;

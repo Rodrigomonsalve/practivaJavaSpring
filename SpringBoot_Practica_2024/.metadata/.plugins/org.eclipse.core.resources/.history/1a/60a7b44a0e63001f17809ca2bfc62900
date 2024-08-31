@@ -1,0 +1,9 @@
+package com.cyberslex.BD.DAO;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cyberslex.BD.entity.Estudiante;
+
+public interface IEstudianteDAO extends JpaRepository<Estudiante, Long> {
+
+}

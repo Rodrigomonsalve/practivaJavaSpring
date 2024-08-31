@@ -81,13 +81,13 @@
 
 <dependency>
     <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
+    <artifactId>mysql-connector-java</artifactId>  <!-- Hibernate no necesita ya JDBC(recordar que es la librería estándar de Java para realizar operaciones en una base de datos), pues esto ya lo hace Hibernate. Sin embargo, sí se usa para la conexión a la base datos. Siempre vas a necesitar JDBC -->
     <version>8.0.28</version>
 </dependency>
 
 <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
+    <groupId>org.hibernate</groupId>  <!-- Hibernate es un ORM es una implemantación de JPA. JPA obviamente también es un ORM. Cuando usas Hibernate usas JPA -->
+    <artifactId>hibernate-core</artifactId> <!-- De JPA provienen los conceptos de: entidades,  -->
     <version>5.6.10.Final</version>
 </dependency>
 
