@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 // Este código hace la veces del archivo de configuración xml, en el que establecíamos beans y, en su caso, en qué clase se inyectarían. Ya no lo necesitamos.
-// Ahora en este código establceos solamente en qué paquete se buscarán beans. En nuestro caso es com.annotations.
+// Ahora en este código establecemos solamente en qué paquete se buscarán beans. En nuestro caso es com.annotations.
 // Este código sabe reconocer si son beans, porque en las clases respectivas se coloca la anotación @Component.
 
 @Configuration

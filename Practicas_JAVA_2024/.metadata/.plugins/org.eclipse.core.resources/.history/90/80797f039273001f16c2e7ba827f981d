@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!--ESTE CÓDIGO XML ES INDISPENSABE EN CONEXIONES A BBDD REALIZADAS A TRAVÉS DE HIBERNATE. NO NOS ES ÚTIL EL CÓDIGO JAVA (PruebasJDBC.java). ESE CÓDIGO SÓLO SE USA PARA REALIZAR UNA PRUEBA-->
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "connection.driver_class">
+        com.mysql.jdbc.Driver
+      </property>
+      
+      <property name = "connection.url">
+         jdbc:mysql://localhost:3306/pruebasHibernate?useSSL=false
+      </property>
+      
+      <!-- Assume test is the database name -->
+      
+      <property name = "connection.username">
+         root
+      </property>
+      
+      <property name = "connection.password">
+      </property>
+      
+      <property name = "dialect">
+         org.hibernate.dialect.MySQL5Dialect
+      </property>
+      
+   </session-factory>
+</hibernate-configuration>
+

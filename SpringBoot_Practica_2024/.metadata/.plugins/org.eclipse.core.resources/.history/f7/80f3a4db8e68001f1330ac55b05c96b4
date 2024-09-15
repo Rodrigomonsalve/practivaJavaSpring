@@ -1,0 +1,7 @@
+package com.cyberslex.api.controllers;
+
+public interface BaseController<E, ID> {
+	
+	
+
+}

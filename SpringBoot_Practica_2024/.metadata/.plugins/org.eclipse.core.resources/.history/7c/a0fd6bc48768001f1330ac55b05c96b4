@@ -1,0 +1,9 @@
+package com.cyberslex.api.repository;
+
+import org.springframework.stereotype.Repository;
+import com.cyberslex.api.entity.Autor;
+
+@Repository
+public class AutorRepository extends BaseRepositiry<Autor, Long> {
+
+}

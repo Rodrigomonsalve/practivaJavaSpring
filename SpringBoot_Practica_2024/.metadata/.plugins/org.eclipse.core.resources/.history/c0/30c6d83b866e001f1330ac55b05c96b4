@@ -1,0 +1,110 @@
+package com.cyberslex.api.entity;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;					//Para poder usar la librería de lombok, además de integrar la librería en el pom, hay que agregar el plugin en Eclipse o el IDE que estés usando.
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Entity
+@Table(name="persona")
+@NoArgsConstructor
+@AllArgsConstructor
+//@Getter   
+//@Setter
+public class Persona extends Base {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+//	@Id
+//	@Column(name="id")
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	private Long id;
+	
+	@Column(name="nombre")
+	private String nombre;
+	
+	@Column(name="apellido")
+	private String apellido;
+	
+	
+	@Column(name="dni")
+	private String dni;
+	
+	// Con cascadetype.all, queremos indicar que cualquier cosa que le hagamos a un registro en la tabla principal, en este caso Domicilio, tendrá efectos sobre el registro correspondiente, en la tabla Persona. Sirve para crear relaciones de composición.
+	@OneToOne(cascade = CascadeType.ALL) //Lo que estoy diciendo es que, la entidad domicilio es la tabla padre y "persona" es la tabla hija. Como es una relación 1:1, hay que recordar que podría ser a la inversa. 
+	@JoinColumn(name="fk_domicilio")  // Con la anotación JoinColumn puedes crear una llave foránea. La regla de mapeo dice que, tratándose de relaciones 1:1, la llave primaria de una las tablas, en este caso de "Domicilio", pasará a la otra tabla como llave foránea. En nuestro caso, la columna de llave foránea en Persona llevará por nombre "fk_domicilio". Estamos creando una nueva columna. 
+	private Domicilio domicilio;   // Ver la tabla en la base de datos y documentos sql para un  mayor entendimiento.
+	
+	
+	// En una relación 1:N, hay que recordar que normalmente no se crean tablas intermedias, sino que la llave primaria de la tabla con cardinalidad 1, en este caso Persona (1 persona puede tener muchos libros) pasa como llave foránea a la otra tabla. En etse caso esto no ocurre, sino que se crea una tabla intermedia, lo cual también está permitido.
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) 
+	@JoinTable(name="persona_libro", joinColumns = @JoinColumn(name="persona_id"), inverseJoinColumns=@JoinColumn(name="libro_id"))
+	private List<Libro> libros = new ArrayList<Libro>();
+	
+	
+	
+
+
+//	public Long getId() {
+//		return id;
+//	}
+//
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+	public String getDni() {
+		return dni;
+	}
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	
+	
+	
+
+}

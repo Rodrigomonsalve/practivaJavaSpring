@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-//Hay que recordar que para el patrón de arquitectura modelo-vista-controlador se usan 2 archivos de configuración: spring-servlet.xml y web.xml
-//También hay que recordar que cuando se ejecuta el proyecto, se invoca primero el web.xml y èste, a su vez, al spring-servlet.xml
+// Hay que recordar que para el patrón de arquitectura modelo-vista-controlador se usan 2 archivos de configuración: spring-servlet.xml y web.xml
+// También hay que recordar que cuando se ejecuta el proyecto, se invoca primero el web.xml y éste, a su vez, al spring-servlet.xml
 // Ahora estos archivos, son sustituidos por código Java. Este es sustituye al spring-servlet.xml
 
 

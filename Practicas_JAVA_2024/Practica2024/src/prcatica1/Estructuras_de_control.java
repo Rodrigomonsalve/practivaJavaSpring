@@ -2,7 +2,7 @@ package prcatica1;
 
 import java.util.*;
 
-public class Estructuras_de_control {
+public class Estructuras_de_control extends ClasesYmetodos {
 	
 	//Formas de declarar un array
 	static int[] conjunto = new int[10];
@@ -52,6 +52,8 @@ public class Estructuras_de_control {
 			System.out.println(conjunto[i]);
 			
 		}
+		
+		Estructuras_de_control.pruebaObjeto();  // El método de la clase heredada, se puede ejecutar, aunque no se haya desarrollado dentro de esta clase, ni sobreescrito.
 
 		
 	}

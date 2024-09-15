@@ -1,0 +1,56 @@
+package pratica2;
+
+//import java.util.*;
+
+
+// Puede ser "T" o cualquier otra palabra al azar, excepto símbolos o números.
+// Al momento de instanciar esta tipo de clases (genéricas), forzosamente deberemos pasar como parámetro el tipo de objeto con el que va a trabajar. Si no, es incorrecto.
+// Generics<Parseos> objetoGenerico = new Generics<Parseos>(); En este ejemplo va a trabajar con el objeto de tipo Parseos. El objeto dentro del cual se guardará el nuevo objeto, se puede declararar como <?> únicamente. Este signo de interrogación no sirve para crear la clase, pue sno puede recibir ni números de símbolos.
+// Al instanciar de la forma anterior, significa que los métodos de la instancia objetoGenerico sólo podrá trabajar con objetos de tipo Parseo:      Parseos objetoParseo = new Parseos();  objetoGenerico.metodoGenerico(objetoParseo);
+public class Generics<T>{
+	
+	public int numero = 1;
+	String palabra = "Perro";
+	
+	
+	public Generics() {
+		
+	}
+	
+
+	
+	public String metodoNoGenerico(T palabra) {
+		return "palabra";
+	}
+	
+	// Como "T" no es realmente nada, al instanciar esta clase, podremos designar el tipo de variable que deberemos pasar como parámetro al ejecutarle el metodoGenerico. Si nos damos cuenta, el parámetro de este método también es T. 
+	// La clase también deberá ser genérica.
+	// Sin Java Generics el código es más rígido, pues, al instanciar el método sólo podremos pasar como parámetro solo un tipo de dato.
+	public T metodoGenerico (T palabra){
+		return palabra;
+	}
+	
+	//En este caso, el método es genérico, sin necesidad de que lo sea la clase. T puede ser cualquier tipo de dato.
+	public static <T> T soloMetodoGenerico(T palabra) {
+		T frase = palabra;
+		return frase;
+	}
+	
+	public static void main(String [] args) {
+		
+		Parseos parseo = new Parseos();
+		Ajedrecistas ajedrecistas = new Ajedrecistas();
+		
+		//GenericsHeredando<Parseos> genericsHeredando = new GenericsHeredando<Parseos>();
+		GenericsHeredando<Ajedrecistas> genericsHeredando = new GenericsHeredando<Ajedrecistas>();
+		
+		genericsHeredando.metodoGenericsHeredando(ajedrecistas);
+	}
+	
+	
+	
+	
+	
+	
+
+}

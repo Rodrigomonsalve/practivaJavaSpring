@@ -1,0 +1,9 @@
+package com.cyberslex.api.service;
+
+import java.io.Serializable;
+
+import com.cyberslex.api.entity.Base;
+
+public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> implements IBaseService<E, ID> {
+
+}

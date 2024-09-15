@@ -1,0 +1,24 @@
+package com.cyberslex.api.service;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.cyberslex.api.entity.Persona;
+
+public interface IPersonaService extends IBaseService<Persona, Long> {
+	
+	List<Persona> findByNombreContainigOrApellidoContaining(String nombre, String apellido);
+	
+	//boolean existsByDni(int dni);
+	
+	
+	@Query(value = "SELECT p FROM Persona p WHERE p.nombre LIKE %:filtro% OR p.apellido LIKE %:filtro%")
+	List<Persona> search(@Param("filtro") String filtro);
+	
+	
+	@Query(value = "SELECT * FROM persona WHERE persona.nombre LIKE '%:filtro%' OR persona.apellido LIKE '%:filtro%'", nativeQuery= true)
+	List<Persona> searchNativo(@Param("filtro") String filtro);
+
+}

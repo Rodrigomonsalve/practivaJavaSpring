@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-// ESTE CÓDIGO NO SE USA EN ESTE PROYECTO, PORQUE EL CONTENDRO DE BEANS SE ENCUENTRA EN XML, DEBIDO A SU FACILIDAD PARA CONFIGURAR BEANS CON HIBERNATE (SPRING-CRUD-SERVLET.XML)
+// ESTE CÓDIGO NO SE USA EN ESTE PROYECTO, PORQUE EL CONTENEDOR DE BEANS SE ENCUENTRA EN XML, DEBIDO A SU FACILIDAD PARA CONFIGURAR BEANS CON HIBERNATE (SPRING-CRUD-SERVLET.XML)
 //EL WEB.XML (myservletspringinizializer.java) APUNTA A SPRING-CRUD-SERVLET.XML. POR ESO ESTE CÓDIGO NO SE USA.
 
 //Hay que recordar que para el patrón de arquitectura modelo-vista-controlador se usan 2 archivos de configuración: spring-servlet.xml y web.xml

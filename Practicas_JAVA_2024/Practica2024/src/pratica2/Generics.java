@@ -11,14 +11,19 @@ public class Generics<T>{
 	
 	public int numero = 1;
 	String palabra = "Perro";
+	T hola;
 	
 	
 	public Generics() {
 		
 	}
 	
-	public String metodoNoGenerico(String palabra) {
-		return palabra;
+
+	
+	public String metodoNoGenerico(T palabra) {
+		
+		T palabra1= palabra;
+		return "palabra";
 	}
 	
 	// Como "T" no es realmente nada, al instanciar esta clase, podremos designar el tipo de variable que deberemos pasar como parámetro al ejecutarle el metodoGenerico. Si nos damos cuenta, el parámetro de este método también es T. 
@@ -32,6 +37,17 @@ public class Generics<T>{
 	public static <T> T soloMetodoGenerico(T palabra) {
 		T frase = palabra;
 		return frase;
+	}
+	
+	public static void main(String [] args) {
+		
+		Parseos parseo = new Parseos();
+		Ajedrecistas ajedrecistas = new Ajedrecistas();
+		
+		//GenericsHeredando<Parseos> genericsHeredando = new GenericsHeredando<Parseos>();
+		GenericsHeredando<Ajedrecistas> genericsHeredando = new GenericsHeredando<Ajedrecistas>();
+		
+		genericsHeredando.metodoGenericsHeredando(ajedrecistas);
 	}
 	
 	

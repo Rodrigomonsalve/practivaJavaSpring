@@ -29,7 +29,7 @@ public class ClasesYmetodos {
 
 }
 	
-	public Empleados pruebaObjeto() {    
+	public static Empleados pruebaObjeto() {    
 		
 		Empleados empleado1 = null;
 		empleado1 = new Empleados();
