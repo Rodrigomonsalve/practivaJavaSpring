@@ -5,6 +5,10 @@ import java.sql.*;
 
 //CONSULTA
 //En este proyecto estamos usando JDBC(Java Database Connectivity) que es el otro nombre para la librería mysql-connector-java. No es está utilizando nada más.
+// JDBC es la API estádar de Java para conectarse a bases de datos relacionales.
+
+// SIEMPRE NECESITAREMOS USAR UN DRIVER PARA CONECTARNOS A LA BASE DE DATOS Y TRADUCIR EL CÓDIGO JAVA A SQL. EN ESTE CASO NO LO ESTAMOS DEFINIENDO EXPLÍCITAMENTE, PORQUE YA ESTA EN EL CLASSPATH.
+// DE NO ESTAR, Class.forName("com.mysql.cj.jdbc.Driver")
 
 public class Base_de_datos {
 	

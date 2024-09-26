@@ -1,4 +1,2 @@
 #Tomcat publish data
-#Thu Aug 08 03:31:45 CDT 2024
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\dell\\.m2\\repository\\org\\springframework\\spring-web\\5.3.16\\spring-web-5.3.16.jar=WEB-INF/lib/spring-web-5.3.16.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\dell\\.m2\\repository\\org\\springframework\\spring-web\\5.3.13\\spring-web-5.3.13.jar=WEB-INF/lib/spring-web-5.3.13.jar
+#Fri Sep 20 14:12:48 CST 2024

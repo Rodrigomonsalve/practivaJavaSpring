@@ -1,0 +1,56 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/s/javaee
+http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+versio="3.1">
+
+<!-- NO ES INDISPENSABLE EL USO DE UN ARCHIVO JSF SI ESTAS TRABAJANDO CON UN SERVIDOR QUE SOPORTE JAVA EE 6 O SUPERIOR-->
+
+<!-- ESTA ES LA COLUMNA VERTEBRAL DE JSF -->
+<!-- JSF YA MANEJA LA ARQUITECTURA MVC, CON CONTROLADOR (MANEJADO AUTOMATICAMENTE POR JSF), MODELO QUE EN NUESTRO  CASO ES "CLIENTE", Y VISTA, SEPARADOS. ESTO NO LO HACEN LOS SERVLETS SOLOS -->
+<!-- OTRA CARACTERISTICA DE JSF ES QUE MANEJA COMPONENTES COMO <h:inputText> QUE SON MAS POTENTES QUE MVC TAGS Y JSTL -->
+<!-- JSF ES COMO REACT, PERO SE EJECUTA DEL LADO DEL SERVIDOR,POR LO QUE ES UN POCO MAS LENTO, PERO BENEFICIA EL SEO Y ES MAS SEGURO -->
+<display-name>Archetype Created Web Application</display-name>
+
+<context-param>
+	<param-name>javax.faces.PROJECT_STAGE</param-name>
+	<param-value>Development</param-value>
+</context-param>
+
+<!-- HAY QUE RECORDAR CÓMO FUNCIONAN LOS SERVLETS -->
+<!-- VEMOS QUE JSF FUCIONA CON SERVLETS -->
+<!-- JSF YA FUCIONA CON SERVLETS PRECONFIGURADOS -->
+<!-- SIN EMBARGO CON JSF TÚ PUEDES CREAR TUS PROPIOS SERVLETS Y REGISTRARLOS AQUI -->
+
+<!-- ESTE ES UN ARCHIVO WEB.XML PROPIO DE JSF. TIENE SUS PECULIARIDADES  -->
+<!-- NORMALMENTE AQUI CREARÌAMOS SERVLETS CON LA ETIQUETA <servlet> -->
+<!-- javax.faces.webapp.FacesServlet ES UN SERVLET QUE VIENE  DENTRO DE LA LIBRERÍA DE JSF -->
+<servlet>
+	<servlet-name>Faces Servlet</servlet-name>
+	<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+
+
+<!-- AQUI MAPEAMOS LAS URL (DE LA MISMA FORMA EN QUE SE HACE EN UN CONTROLADOR) -->
+<!-- SIN EMBARGO, EN JSF, TODO EL TRAFICO SE DIRIGE A /faces/* O CON TERMINACION *.jsf Y ES EL PROPIO SERVLET EL QUE REDIRIGE EL TRAFICO A TU URL-->
+<servlet-mapping>
+	<servlet-name>Faces Servlet</servlet-name>
+	<url-pattern>/faces/*</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Faces Servlet</servlet-name>
+	<url-pattern>*.jsf</url-pattern>
+</servlet-mapping>
+
+<session-config>
+	<session-timeout>30</session-timeout>
+</session-config>
+
+<welcome-file-list>
+
+	<welcome-file>faces/index.xhtml</welcome-file>
+</welcome-file-list>
+
+</web-app>
