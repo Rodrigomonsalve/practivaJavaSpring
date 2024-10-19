@@ -1,0 +1,44 @@
+package pratica2;
+
+public class Condicionales {
+	
+	public String condicionalIf(int num, int num2) {
+		
+		if(num > num2) {
+			
+			return "El numero " + num + " es mayor que el numero" + num2;
+			
+		} else {
+			
+			return "El numero " + num2 + " es mayor que el numero" + num;
+	}
+
+}
+	
+	public String condicionalIf2(int num, int num2, int num3) {
+		
+		if(num > num2 && num > num3) {
+			
+			return "El numero " + num + " es el mayor de todos";
+			
+		} else if(num < num2 && num < num3) {
+			
+			return "El numero " + num + " es el menor de todos";
+			
+		} else if(num < num2 && num > num3) {
+			
+			return "El numero " + num2 + " es el mayor de todos";
+			
+		} else if (num > num2 && num < num3) {
+			
+			return "El numero " + num3 + " es el mayor de todos";
+			
+		} else {
+			
+			return "El numero " + num3 + " es el mayor de todos";
+		}
+
+}
+	
+	
+}

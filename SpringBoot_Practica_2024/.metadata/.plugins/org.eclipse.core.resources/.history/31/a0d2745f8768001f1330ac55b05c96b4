@@ -1,5 +1,0 @@
-package com.cyberslex.api.repository;
-
-public interface BaseRepository {
-
-}

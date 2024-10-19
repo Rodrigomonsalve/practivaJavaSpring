@@ -1,0 +1,9 @@
+package pratica2;
+
+public interface Fuctional<T> {
+	
+	public T void accept(T  palara);
+	
+	
+
+}

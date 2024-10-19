@@ -1,0 +1,20 @@
+package Excepciones;
+
+public class EjemploTryCatch {
+	
+
+	public static void  main(String[] args) {
+		
+		String numeroComoTexto="123a";
+		
+		try {
+			
+			int numero=Integer.parseInt(numeroComoTexto);
+			
+			System.out.print("El numero es " + numero);
+		}catch(NumberFormatException e) {
+			
+			System.out.print("Error: La cadena no se puede convertir a un numero entero");
+		}
+	}
+}

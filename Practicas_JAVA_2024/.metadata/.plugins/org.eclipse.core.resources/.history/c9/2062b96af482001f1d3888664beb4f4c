@@ -1,0 +1,8 @@
+package lambda;
+
+@FunctionalInterface
+public interface Operacion {
+	
+	public int ejecutar(int a, int b);
+
+}

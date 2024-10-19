@@ -5,6 +5,9 @@ import java.io.File;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 //EN ESTE PROYECTO NO ES NECESARIO USAR SPRING
+// JACKSON SIRVE PARA SERIALIZAR Y DESERIALIZAR.
+// SERIALIZAR: DE OBJETO JAVA A JSON
+// DESERAILIZAR: DE JSON A OBJETO JAVA
 
 public class DriverJackson {
 	

@@ -1,0 +1,35 @@
+package lambda;
+
+import java.util.function.Function;
+
+public class LambdaFunction {
+	
+
+	public static void main(String[] args) {
+		
+		Operacion suma = (a, b) -> a + b;// TODA FUNCION LAMBDA REGRESA UN OBJETO DE TIPO LA INTERFAZ FUNCIONAL (ES DECIR, RETORNA UN METODO), EN ESTE CASO, DE TIPO OPERACION. DE AHI QUE HAGA FALTA EJECUTAR ESTE METODO(SUMA). NO RETORNA EL RESULTADO DE LA FUNCION.
+		
+		Operacion multiplicacion = (a, b) -> a * b;
+		
+		System.out.print((1, 2) -> a * b);
+				
+		System.out.print("Suma: " + ejecutarOperacion(5,3,suma));
+		
+		System.out.print("Multiplicacion: " + ejecutarOperacion(5,3,suma));
+		
+		
+		
+	}
+	
+	public static void processString(Function<String, Integer> lambdaFunction, String input) {
+		
+		Integer result = lambdaFunction.apply(input);
+		System.out.print("Resultado:" + result);
+		
+	}
+	
+	public static int  ejecutarOperacion(int a, int b, Operacion operacion) {
+		
+		return operacion.ejecutar(a, b);
+	}
+}

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //Es necesario un POJO para transformar el contenido de un JSON a código Java (un objeto). Esto se va a realizar desde la clase DriverJackson.
 
 
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown=true) // SE USA PORQUE, EN EL PROCESO DE DESERIALIZACION PUEDE QUE HAYA VARIABLES QUE NO COINCIDAN CON LAS DEL JSON. ESAS VARIABLES SE IGNORARÍAN.
 public class Empleado {
 	
 	private int id;

@@ -1,0 +1,24 @@
+package lambda;
+
+public class LambdaFunction {
+	
+
+	public static void main(String[] args) {
+		
+		Operacion suma = (a, b) -> a + b;
+		
+		Operacion multiplicacion = (a, b) -> a * b;
+		
+		System.out.print("Suma: " + ejecutarOperacion(5,3,suma));
+		
+		System.out.print("Multiplicacion: " + ejecutarOperacion(5,3,suma));
+		
+		
+		
+	}
+	
+	public static int  ejecutarOperacion(int a, int b, Operacion operacion) {
+		
+		return operacion.ejecutar(a, b);
+	}
+}

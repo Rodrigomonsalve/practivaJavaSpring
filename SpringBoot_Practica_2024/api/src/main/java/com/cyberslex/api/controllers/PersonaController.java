@@ -30,7 +30,8 @@ import com.cyberslex.api.service.PersonaServiceImpl;
 
 
 
-@RestController
+@RestController //PROVOCA QUE LOS METODOS SIEMPRE DEVUELVAN UN JSON. POR DEFECTO ES EN JSON. SI QUIERES QUE SOPORTE XML, DEBERÁS CONFIGURAR TU MÉTODO CONTROLADOR Y AGREGAR EN EL POM LA LIBRERÍA jackson-dataformart-xml 
+				// DE IGUAL FORMA, LA SOLICITUD HTTP DEL CLIENTE DEBE SOLICITAR UN JSON DENTRO DEL VALOR "ACCEPT"   */* ---> acepta todos los formatos , application/json ---> sólo acepta json , application/xml ---> sólo acepta xml
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/persona")
 public class PersonaController extends BaseControllerImpl<Persona, PersonaServiceImpl>{  // Como ya sabemos, al simplemente heredar, PersonaController puede usar los métodos de la clase heredada como si fueran propios, sin necesidad de que se declaren dentro de la clase.

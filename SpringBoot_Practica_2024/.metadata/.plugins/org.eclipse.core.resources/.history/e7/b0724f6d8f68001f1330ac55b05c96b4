@@ -1,8 +1,0 @@
-package com.cyberslex.api.controllers;
-
-import com.cyberslex.api.entity.Base;
-import com.cyberslex.api.service.BaseServiceImpl;
-
-public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceImpl<E, Long>> implements BaseController<E, Long>{
-
-}

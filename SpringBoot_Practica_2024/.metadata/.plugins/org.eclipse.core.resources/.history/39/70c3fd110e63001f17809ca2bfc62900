@@ -1,9 +1,0 @@
-package com.cyberslex.api.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.cyberslex.api.entity.Persona;
-
-public interface PersonaRepository extends JpaRepository<Persona, Long> {
-
-}

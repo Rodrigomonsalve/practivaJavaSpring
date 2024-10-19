@@ -1,7 +1,0 @@
-package com.cyberslex.api.service;
-
-import com.cyberslex.api.entity.Persona;
-
-public interface IPersonaService extends IBaseService<Persona, Long> {
-
-}

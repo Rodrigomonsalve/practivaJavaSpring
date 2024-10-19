@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47f69351-7375-4f94-b9c6-211dad97fb83" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java_Security/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_Security/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_Security/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_Security/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practicas_JAVA_2024/.metadata/.plugins/org.eclipse.m2e.logback/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Practicas_JAVA_2024/.metadata/.plugins/org.eclipse.m2e.logback/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practicas_JAVA_2024_WEB/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Practicas_JAVA_2024_WEB/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practicas_JAVA_2024_WEB/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Practicas_JAVA_2024_WEB/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practicas_JAVA_SPRING/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Practicas_JAVA_SPRING/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/BD/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/BD/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/BD/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/BD/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/api/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/api/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/api/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/api/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/springboot/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/springboot/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/springboot/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/springboot/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.projects/springboot/org.eclipse.jdt.core/state.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/3.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.resources/3.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.jdt.core/689546952.index" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.jdt.core/689546952.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.core/workspacestate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.core/workspacestate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.jdt/api.container" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.jdt/api.container" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.logback/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.m2e.logback/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot_Practica_2024/.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2mmkLV1CxkCHWI3tAslFHL6DiTL" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47f69351-7375-4f94-b9c6-211dad97fb83" name="Changes" comment="" />
+      <created>1727689082260</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727689082260</updated>
+    </task>
+    <servers />
+  </component>
+</project>
