@@ -1,0 +1,15 @@
+package SOLID;
+
+public abstract class OpenClosed {
+	
+	protected double amount;
+	
+	public OpenClosed(double amount) {
+		
+		this.amount=amount;
+		
+	}
+	
+	public abstract double calculateTotal();
+
+}

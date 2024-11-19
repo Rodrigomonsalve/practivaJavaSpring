@@ -1,0 +1,5 @@
+LIBRERIAS:
+1)UTIL - Listas
+UTIL.FUNCTION - Interfaces funcionales como BiFunction
+2)JAVAX SWING - JOptionPane
+3)LANG - Integer y otros datos no primitivos, y system.out

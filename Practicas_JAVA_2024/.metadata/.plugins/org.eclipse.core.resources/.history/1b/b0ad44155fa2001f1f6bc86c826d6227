@@ -1,0 +1,23 @@
+package SOLID;
+
+
+//
+public class SingleResponsability {
+	
+	
+	private double amount;
+	
+	public SingleResponsability(double amount) {
+		this.amount=amount;
+	}
+	
+	public double calculateTotal() {
+		return amount*1.16;
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

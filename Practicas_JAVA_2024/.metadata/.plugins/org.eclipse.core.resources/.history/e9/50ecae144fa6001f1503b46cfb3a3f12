@@ -1,0 +1,40 @@
+package algoritmos;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class PromedioPositivosNegativos {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> positivos=new ArrayList<Integer>();
+		ArrayList<Integer> negativos=new ArrayList<Integer>();
+		
+		int sumadorCeros=0;
+		int promedioPositivos=0;
+		int promedioNegativos=0;
+		
+		
+		for(int i=0;i>=positivos.size()&&negativos.size()<=i;i++) {
+			int num=Integer.parseInt(JOptionPane.showInputDialog("Ingresa una serie de numeros. Al oprimir la letra 'P' verás el promedio de los números negativos, positivos y el número de ceros"));
+			if(num>0) {
+				positivos.add(num);
+			}else if(num < 0) {
+				negativos.add(num);
+			}else if(num==0) {
+				sumadorCeros+=num;
+			}
+			
+		}
+		
+		
+		
+		
+		
+		System.out.println("");
+		
+
+	}
+
+}

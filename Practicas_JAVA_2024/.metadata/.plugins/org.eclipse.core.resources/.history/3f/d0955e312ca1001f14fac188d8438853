@@ -1,0 +1,60 @@
+package programacionFuncional;
+
+public class MainExample implements Operation {
+	
+	public MainExample() {
+		
+//		Operation.interfaceStaticMethod();
+//		interfaceDefaultMethod();
+		
+		//Operation o1=new Operation();
+		
+		Operation o1=multiplication();
+		
+		printResultOfThis(o1);
+		
+	}
+
+	private Operation multiplication() {
+		return new Operation() {
+			
+			@Override
+			public float operation() {
+				
+				float value1=3.3f;
+				print("Primer valor: " + value1);
+				int value2=3;
+				print("Segundo valor: " + value2);
+				return 0;
+			}
+			
+			private void print(String value) {
+				
+				System.out.println(value);
+				
+			}
+			
+		};
+	}
+	
+	private void printResultOfThis(Operation operation) {
+		
+		System.out.println(operation.operation());
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		new MainExample();
+		
+	}
+
+
+	@Override
+	public float operation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

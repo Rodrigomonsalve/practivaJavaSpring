@@ -1,0 +1,13 @@
+package algoritmos;
+
+import java.util.ArrayList;
+
+public class PromedioNumPositivos {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> numeros = new List<Integer>;
+
+	}
+
+}

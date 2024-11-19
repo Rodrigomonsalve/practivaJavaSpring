@@ -1,0 +1,32 @@
+package algoritmos;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SumaNumeros {
+
+	public static void main(String[] args) {
+	
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Integer> conjunto = new ArrayList<>();
+		
+		System.out.println("Ingresa los numeros que desees, para sumarlos. Al ingresar el número 0, se ejecutará la suma: ");
+		
+		
+		for(int i=0;i<=conjunto.size();i++) {
+			
+			conjunto.add(sc.nextInt());
+			if(sc.nextInt()!=0) {
+				break;
+			}
+				
+			}
+		
+		}
+			
+		
+		
+
+	}
+
+

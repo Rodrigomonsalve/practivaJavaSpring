@@ -1,0 +1,10 @@
+package SOLID;
+
+public class SingleResponsabilityPrinter {
+	
+	public void printInvoice() {
+		SingleResponsability singleResponsability=new SingleResponsability(150.9);
+		System.out.println("Invoice amount with tax: " + singleResponsability.calculateTotal());
+	}
+
+}

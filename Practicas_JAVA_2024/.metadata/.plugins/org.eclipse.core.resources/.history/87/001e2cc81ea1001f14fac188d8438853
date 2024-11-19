@@ -1,0 +1,5 @@
+package programacionFuncional;
+
+public interface Operation {
+
+}

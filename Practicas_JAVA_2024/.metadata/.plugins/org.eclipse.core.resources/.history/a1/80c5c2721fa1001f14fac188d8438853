@@ -1,0 +1,8 @@
+package programacionFuncional;
+
+@Functionalnterface
+public interface Operation {
+	
+	float operation();
+
+}

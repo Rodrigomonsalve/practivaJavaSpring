@@ -1,0 +1,43 @@
+package algoritmos;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SumaNumeros {
+
+	public static void main(String[] args) {
+	
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Integer> conjunto = new ArrayList<>();
+		
+		System.out.println("Ingresa los numeros que desees, para sumarlos. Al ingresar el número 0, se ejecutará la suma: ");
+		
+		
+		for(int i=0;i<=conjunto.size()&&sc.nextInt()!=0;i++) {
+			System.out.println(sc.nextInt());
+			int num=sc.nextInt();
+			conjunto.add(num);
+		}
+		
+				System.out.println("Ya terminaste ");
+				int sumador=0;
+				int num=0;
+				
+		for(int j=0;j<conjunto.size();j++) {
+					num=conjunto.get(j);
+				}
+		
+		sumador+=num;
+				System.out.println("La suma de tus valores es: " + sumador);
+			
+				
+			
+		
+		}
+			
+		
+		
+
+	}
+
+

@@ -1,0 +1,10 @@
+package algoritmos;
+
+public class PromedioNumPositivos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

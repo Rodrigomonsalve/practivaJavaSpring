@@ -1,0 +1,40 @@
+TEMAS:
+1)ARCHIVOS DE CONFIGURACION - Practicas_JAVA_2024_WEB - Practica_2024 - MyServletSpringInitializer // Practicas_JAVA_2024_WEB - MVC_Maven - App,MyServletSpringInitializer // Practicas_JAVA_2024 - Annotations - EmpleadosConfig // Practicas_JAVA_2024 - Estudio - applicationContext.xml // Practicas_JAVA_2024 - Hibernate - hibernate.cfg.xml
+2)BEAN - Practicas_JAVA_2024 - Estudio - applicationContext.xml // Java_Security - Api_rest - Empleado
+2)CONEXIONES A BD - Practicas_JAVA_2024_WEB - Practica_2024 - Comprueba_usuario,Recoge-datos // Practicas_JAVA_2024_WEB - Practica_2024 - ConectaCrud // Practicas_JAVA_2024 - Hibernate // Practicas_JAVA_2024 - Practicas2024 - practica3
+3)CONTROLADOR - Practicas_JAVA_2024_WEB - MVC_Maven - ControladorAlumno,ControladorMyLogin // Java_Security - Api_rest - EmpleadoRestController // Java_Security - JSF - ClienteBean
+4)COOKIES - Practicas_JAVA_2024_WEB - Practica_2024 - agencia_viajes,cookies.html,cookies.jsp
+5)CORS - SpringBoot_Practica_2024 - api - PersonaController
+6)CRUD SIN SPRINGBOOT - Practicas_JAVA_SPRING - CRUD
+7)DAO - SpringBoot_Practica_2024 - BD // SpringBoot_Practica_2024 -api - PersonaRepository // Practicas_JAVA_2024_WEB - Practica_2024 - ClienteDAO,ClienteDAOClase // Java_Security - JSF - JPAUTIL // Practicas_JAVA_2024 - Hibernate
+DEPENDENCIA - Practicas_JAVA_2024 - Estudio - applicationContext.xml
+8)ENTIDADES - SpringBoot_Practica_2024 - api - Base // Practicas_JAVA_2024_WEB - Practica_2024 - Clientes
+9)EXCEPCIONES - Java_Security - Api_rest - EmpleadoException,EmpleadoRestController // Practicas_JAVA_2024 - Practicas2024 - Excepciones
+10)FACADE - SpringBoot_Practica_2024 - BD - MetodoContollerFacade
+11)FORMAS DE CONTROLADORES - SpringBoot_Practica_2024 - springboot
+12)GENERICS - SpringBoot_Practica_2024 - api - BaseController,BaseControllerImpl
+13)GET - SpringBoot_Practica_2024 - springboot - MetodoController4,MetodoController5
+14)HIBERNATE - Practicas_JAVA_2024 - Hibernate
+INYECCION DE DEPENDENCIAS - Practicas_JAVA_2024 - Estudio - DirectorEmpleado // Practicas_JAVA_SPRING - CRUD - ClienteControlador
+15)JSF - Java_Security - JSF 
+16)JSP - Practicas_JAVA_2024_WEB - Practica_2024
+17)LOGS - SpringBoot_Practica_2024 - springboot - MetodoController7
+18)MEMORIA - Practicas_JAVA_2024 - Estudio - UsoEmpleados
+19)MODELANDVIEW - SpringBoot_Practica_2024 - springboot - MetodoController2
+20)MODELATTRIBUTE - SpringBoot_Practica_2024 - springboot - MetodoController5
+21)MVC - Practicas_JAVA_SPRING - CRUD // Practicas_JAVA_SPRING - MVC_Maven // Practicas_JAVA_2024 - Estudio
+22)MVC-TAGS - Practicas_JAVA_2024_WEB - MVC_Maven
+23)POJO - Java_Security - Api_rest - Empleado
+24)POST SpringBoot_Practica_2024 - springboot - MetodoController5
+25)PROPERTIES - Practicas_JAVA_2024 - Annotations - datosEmpresa.properties,DirectorFinanciero
+PROTOTYPE - Practicas_JAVA_2024 - Estudio - UsoEmpleado
+26)REDIRECCIONES - SpringBoot_Practica_2024 - springboot - MetodoController6
+27)RELACIONES - SpringBoot_Practica_2024 - api - Persona,Domicilio,Libro // Practicas_JAVA_2024 - Hibernate - com.hibernate.relaciones.entity
+28)REPOSITORIO - SpringBoot_Practica_2024 - api - BaseRepository
+29)SECURITY Java_Security - Security // springCloudMicroservicios
+30)SERVLETS Java_Security - JSF // Java_Security - Servlets
+31)SESIONES - Practicas_JAVA_2024_WEB - Practica_2024 - Sesiones // Practicas_JAVA_2024_WEB - MVC_Maven - HolaAlumnosSpring.jsp
+32)SINGLETON - Practicas_JAVA_2024 - Estudio - UsoEmpleados
+33)SPRINGFRAMEWORK CON ANOTACIONES - Practicas_JAVA_2024 - Annotations
+34)SPRINGFRAMEWORK - Practicas_JAVA_2024 - Estudio
+35)TRANSACTIONAL - Practicas_JAVA_2024_WEB - Practica_2024 - ClienteDAOClase

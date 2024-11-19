@@ -1,0 +1,65 @@
+package programacionFuncional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
+
+//LA INTERFAZ FUNCIONAL CONSUMER REPRESENTA UNA OPERACION QUE ACEPTA UN SOLO ARGUMENTO Y NO DEVUELVE NINGUN RESULTADO.
+// SE USA CUANDO DESEAS REALIZAR UNA OPERACION SORE UN OBJETO, PRICIPALMENTE STRINGS, COMO IMPRIMIR, MODIFICAR SU ESTADO O REGISTRAR DATOS.
+public class ConsumerExamples {
+	
+	static List<Object> list=new ArrayList<>();
+	
+	public static void main(String[] args) {
+		
+		list.add("Hello bros");
+		list.add(2020);
+		list.add(true);
+		list.add(48.8f);
+		
+		//ESTAMOS ESPECIFICANDO EL CONTENIDO DEL METODO DE LA INTERFAZ FUNCIONAL CONSUMER (accept). PRIMERO CON EL METODO println, luego con el metodo add y finalmente con printLst.
+		usingConsumer("Hola! Soy un valor de tipo T", System.out::println, list::add, ConsumerExamples::printLst);
+		usingConsumer(1, System.out::println, list::add, ConsumerExamples::printLst);
+		
+		usingBiConsumer(4,1000, (e,v)->printBefore(e, v));
+		
+		//SÒLO ES CONFIRMACION DE LO ANTERIOR:
+		Consumer<String> x=System.out::println;
+		Consumer<String> y=list::add;
+		
+		
+		
+		
+	}
+
+	private static void printBefore(Integer e, Integer v) {
+		System.out.println("En el index: "+e+"se intenta añadir el elemento" +v);
+	}
+	
+	private static<T,U> void usingBiConsumer(T value, U otherValue, BiConsumer<T,U>  biconsume) {
+		
+		biconsume.accept(value, otherValue);
+		
+	}
+
+	private static<T> void printLst(T value) {
+		
+		System.out.println("Se añadio a la lista el valor: " + value + "  -- Total de valores en la lista: ");
+		list.forEach(System.out::println);
+		
+	}
+
+	
+	private static<T> void usingConsumer(T value, Consumer<T> consumer, Consumer<T> consumer2, Consumer<T> consumer3) {
+		
+		consumer.accept(value);
+		consumer2.accept(value);
+		consumer3.accept(value);
+		
+		consumer.andThen(consumer2).andThen(consumer3);
+		
+	}
+
+}

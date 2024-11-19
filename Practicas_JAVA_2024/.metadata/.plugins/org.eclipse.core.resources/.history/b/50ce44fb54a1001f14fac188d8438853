@@ -1,0 +1,26 @@
+package programacionFuncional;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConsumerExamples {
+	
+	static List<Object> list=new ArrayList<>();
+	
+	public static void main(String[] args) {
+		
+		list.add("Hello bros");
+		list.add(2020);
+		list.add(true);
+		list.add(48.8f);
+		usingConsumer();
+		
+		
+	}
+
+	private static void usingConsumer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

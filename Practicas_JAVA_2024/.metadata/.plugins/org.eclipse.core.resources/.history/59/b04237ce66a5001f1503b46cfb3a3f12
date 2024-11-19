@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://wwww.springframework.org/schema/context"
+		xsi:schemaLocation=
+		"http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+">
+		<context:component-scan base-package="com.cyberslex"></context:component-scan> 
+		
+		
+		<!--ES TRASCENDENTAL ENTENDER LA LÓGICA DE ESTE DOCUMENTO, AUNQUE DESPÚES YA NO SE USE-->
+		<!--UNA DE LAS IMPORTANCIAS RADICA EN QUE SI QUEREMOS AHORA USAR DIRECTOREMPLEADO EN ALGUNA OTRA CLASE, DIRECTOREMPLEADO FORZOSAMENTE DEBE INYECTARSE DE LA MISMA FORMA EN QUE SE INYECTÓ MIINFORME EN DIRECTOREMPLEADO. SI SÓLO LA INSTANCIAMOS, PROVOCARIAMOS QUE NO SE ENCONTRARA MIINFORME Y SU COMPORTAMIENTO SERÍA ERRÓNEO. ES COMO UNA CADENA  -->
+		
+		<!--UN BEAN ES UN OBJETO QUE SE ENCUENTRA DENTRO DE ESTE CONTENEDOR -->
+		<!-- NO ES LO MISMO QUE UN BEAN DE JAVA(JAVABEAN). DEBE TENER UN CONSTRUCTOR PÚBLICO SIN ARGUMENTOS, SETTER Y GETTERS E IMPLEMENTAR LA INTERFAZ SERIALIZABLE-->
+		<!--UNA DEPENDENCIA ES UN OBJETO QUE UNA CLASE NECESITA PARA FUNCIONAR Y QUE ES INYECTADA DESDE EL CONTENEDOR DE BEANS. NO CONFUNDIR CON DEPENDENCIA COMO LIRERIA GESTIONADA POR MAVEN -->
+
+		
+		<bean id="miInforme" class="com.cyberslex.Informe"></bean>  <!-- En esta línea estamos creando un bean, excatamente igual que como lo hicimos con el siguiente (DirectorEmpleado). En esta caso nos va a servir para invertir el control en las clases en las que se instancie, y para inyectarlo en contadorEmpleado.-->		
+		
+		<bean id="miEmpleado" class="com.cyberslex.DirectorEmpleado" init-method="metodoInit" destroy-method="metodoFinal"> <!-- La clase que nosotros definamos aquí va a ser el tipo de objeto que vamos a estar instanciando en las clases respectivas utilizando la palabra "miEmpleado". Para cambir el tipo de objeto, basta con hacerlo en esta parte de este documento.-->
+																	<!--En id va el nombre que nosotros elijamos para el bean, y en class va el nombre de la clase junnto con el paquete al que pertenece. Debe implementar una interfaz--> 
+																	<!--Es necesario que la clase que se asocie en este xml (ContadorEmpleado) implemente una interfaz, para que todas las clases que la implementen (y que se puedan asociar en este xml) tengan exactamente el mismo método, y de este modo, sólo se tenga que cambiar la clase en este xml y no se tenga que hacer también con el método invocado en la clase correspondiente-->
+																	<!-- El init-method y el destroy-method se refieren a los métodos que se siempre y sin excepción se van a ejecutar desdel principio y hasta el final, cuando se ejecute algún método de la clase DirectorEmpleado.-->
+																	
+																	
+															
+																	
+			<constructor-arg ref="miInforme"></constructor-arg>			<!--Con esta línea estamos indicando que un objeto de tipo SE ESTÁ INYECTANDO (ESTÁ SIENDO USADO) por la clase DirectorEmpleado.-->												
+		</bean>
+		
+		
+</beans>
+
+<!-- Este es el contenedor de beans que nos va a ayudar a invertir el control en las clases e inyectarlos en clases, para convertirse en dependencias. Se les llama dependenciasporque son beans que son necesarios para que una clase funcione correctamete.-->
+<!-- Un bea es un objeto contenido en este contenedor. Se convierte en dependencia cuando se inyecta o es usado por alguna clase-->
+<!--Este documento normalmente ya no se usa-->
+		

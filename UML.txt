@@ -1,0 +1,90 @@
+UML(Unified Modeling Languaje)
+No es un lenguaje de progrmacion.
+Es un lenguaje grafico.
+Es un tipo de modelado de sistemas.
+Sirve para homologar la forma de modelar sistemas.
+Primera version a mediados de los 90.
+Sirve pricipalmente para aplicaciones complejas.
+
+¿En qué etapa se usa?
+Waterfall:
+1) Análisis --> Podría llegar a crearse aqui
+2) Diseño --> Aqui se crea
+3) Implemetación --> Aqui se usa
+4) Verificación
+5) Mantenimiento.
+
+En waterfall son "planos" que no pueden ser modificados.
+
+En proyectos agile los diagramas son flexibles y sirven mas como una herramienta de colaboracion.
+
+Para diagramar en UML, debes entender POO.
+1)Clases
+2)Metodos
+3)Variables
+4) Herencia
+5)Abstracción
+6)Polimorfismo
+7)Encapsulamiento
+8)Objetos
+
+Tipos de diagramas:
+1)De caso de uso.
+2) De clases.
+3) De objetos.
+4) De secuencia.
+5) De actividades.
+6) De componentes.
+7) De implementacion
+8) De estados.
+9)De interaccion.
+10) De estructura compuesta.
+11) De perfil
+12) De paquetes.
+
+DE CASOS DE USO
+Se elabora desde el punto de vista del usuario.
+Se basa en roles, no en personas.
+Por lo tanto, un rol también puede ser un sistema con el que interactúe la aplicación.
+Proporciona una vista de alto nivel, no da detalles.
+
+Preguntas a realizar:
+1) Quienes van a interactuar con la aplicacion?(roles)
+2) Cuáles son las funciones que debe realizar la aplicacion?
+
+Actores principales van a la izquierda.
+Elipses-->Funcionalidades(Casos de uso base)
+Lineas-->Asociaciones(Entre actores y casos de uso)
+Muñecos -->Actores
+Las siguientes se llaman dependencias:
+Lineas punteadas-->Include(Asociación de un caso de uso base del cual depende necesariamente). Debe ir por arriba del caso base.
+Lineas punteadas-->Extend(Asociación de un caso de uso base del cual depende opcionalmente)Puede que el usuario decida escoger esa opcion o no.  Debe ir por abajo del caso base.
+
+El extend se encuetra relacionado con los "Puntos de extensión" que son las conductas que debe realizar el actor para activar esa opción.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

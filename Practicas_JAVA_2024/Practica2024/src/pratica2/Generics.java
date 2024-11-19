@@ -5,7 +5,7 @@ package pratica2;
 //JAVA GENERICS ES ESENCIAL PARA CREAR INTERFACES
 
 // Puede ser "T" o cualquier otra palabra al azar, excepto símbolos o números.
-// Al momento de instanciar esta tipo de clases (genéricas), forzosamente deberemos pasar como parámetro el tipo de objeto con el que va a trabajar. Si no, es incorrecto.
+// Al momento de instanciar este tipo de clases (genéricas), forzosamente deberemos pasar como parámetro el tipo de objeto con el que va a trabajar. Si no, es incorrecto.
 // Generics<Parseos> objetoGenerico = new Generics<Parseos>(); En este ejemplo va a trabajar con el objeto de tipo Parseos. El objeto dentro del cual se guardará el nuevo objeto, se puede declararar como <?> únicamente. Este signo de interrogación no sirve para crear la clase, puesno puede recibir ni números de símbolos.
 // Al instanciar de la forma anterior, significa que los métodos de la instancia objetoGenerico sólo podrá trabajar con objetos de tipo Parseo:      Parseos objetoParseo = new Parseos();  objetoGenerico.metodoGenerico(objetoParseo);
 public class Generics<T>{

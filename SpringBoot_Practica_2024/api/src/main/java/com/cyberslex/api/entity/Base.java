@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@MappedSuperclass   //Esta anotación sólo se usa en las clases de tipo entity, y sirve para aclarar que no tiene un mapeo directo a la base de datos como normalmente lo haría, sino que es una pantilla que es usada por otras clases de tipo entity. En las que usan esta plantilla, basta que herderar de ella, para que automáticamente pasen sus atributos.
+@MappedSuperclass   //Esta anotación sólo se usa en las clases de tipo entity, y sirve para aclarar que no tiene un mapeo directo a la base de datos como normalmente lo haría, sino que es una pantilla que es usada por otras clases de tipo entity. En las que usan esta plantilla, basta herderar de ella, para que automáticamente pasen sus atributos.
 @NoArgsConstructor
 @AllArgsConstructor
 //@Getter

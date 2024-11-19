@@ -1,0 +1,7 @@
+package programacionFuncional;
+
+public class ConsumerExamples {
+	
+	static List<Object> list=new ArrayList<>();
+
+}

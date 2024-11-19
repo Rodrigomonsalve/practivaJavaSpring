@@ -1,0 +1,11 @@
+package SOLID;
+
+public class SingleResponsabilityExe {
+
+	public static void main(String[] args) {
+		SingleResponsabilityPrinter singleResponsabilityPrinter=new SingleResponsabilityPrinter();
+		singleResponsabilityPrinter.printInvoice();
+
+	}
+
+}

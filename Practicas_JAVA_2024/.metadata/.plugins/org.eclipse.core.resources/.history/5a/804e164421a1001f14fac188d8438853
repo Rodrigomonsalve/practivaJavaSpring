@@ -1,0 +1,23 @@
+package programacionFuncional;
+
+public class MainExample implements Operation {
+	
+	public MainExample() {
+		
+		Operation.interfaceStaticMethod();
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+
+	@Override
+	public float operation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

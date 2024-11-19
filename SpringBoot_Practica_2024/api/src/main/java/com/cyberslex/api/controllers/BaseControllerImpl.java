@@ -36,7 +36,6 @@ import com.cyberslex.api.service.BaseServiceImpl;
 
 public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceImpl<E, Long>> implements BaseController<E, Long>{
 
-	
 	@Autowired
 	protected S servicio;
 	

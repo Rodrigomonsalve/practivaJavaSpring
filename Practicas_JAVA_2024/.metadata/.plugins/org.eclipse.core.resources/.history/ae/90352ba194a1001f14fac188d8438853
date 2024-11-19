@@ -1,0 +1,23 @@
+package algoritmos;
+
+import javax.swing.JOptionPane;
+
+public class VentasSuperiores2000 {
+	
+	
+	int[] ventas=new int[10];
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		
+		for(int i=0;i<ventas.length;i++) {
+		ventas[i]=JOptionPane.showInputDialog("Ingresa el monto de venta: ");
+		
+		}
+		
+	}
+
+}
