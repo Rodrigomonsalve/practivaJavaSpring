@@ -1,0 +1,24 @@
+package estudio.com;
+
+// RELACIONADO CON LAS LISTAS ENLAZADAS
+
+// LO QUE HACE QUE SE CONFORME UNA LISTA Y QUE ESA LISTA SE ENLACE, ES EL HECHO DE CREAR UN OBJETO Y QUE UNO DE SUS ATRIBUTOS SEA EL PROPIO OBJETO.
+// CUANDO SE CREA UN OBJETO, EN ESTE CASO DE TIPO NODO, VA A CONTAR CON SU STRING Y CON OTRO OBJETO EL CUAL A SU VEZ TENDRÁ OTRO STRING Y OTRO OBJETO Y ASI SUCESIVAMENTE.
+// ENTONCES UN SOLO OBJETO HARÁ REFERENCIA A MULTIPLES OBJETOS ENLAZADOS
+
+public class Nodo {
+	
+	String dato;
+	Nodo siguiente;
+	
+	public Nodo(String d, Nodo sig) {
+		this.dato=d;
+		this.siguiente=sig;
+	}
+	
+	public Nodo(String d) {
+		this.dato=d;
+		this.siguiente=null;
+	}
+
+}

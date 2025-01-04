@@ -1,5 +1,33 @@
 LIBRERIAS:
-1)UTIL - Listas
-UTIL.FUNCTION - Interfaces funcionales como BiFunction
-2)JAVAX SWING - JOptionPane
-3)LANG - Integer y otros datos no primitivos, y system.out
+
+ORG.SLF4J
+-org.slf4j.LoggerFactory
+-org.slf4j.Logger
+
+SPRING-BOOT
+-SPRINGFRAMEWORK.BOOT - SpringBoot
+
+JAVAX.PERSISTENCE-API
+-JAKARTA.PERSISTENCE(antes JAVAX.PERSISTENCE) - Forma parte de JEE. Es una especificación. Hibernate la implementa. @Entity,@Table,@Id,@GeneratedValue,@OneToMany .Es JPA.
+
+HIBERNATE-CORE
+-ORG.HIBERNATE
+
+SPRING-WEB
+-springframework.web Trae anotaciones como @GetMapping,@RequestMapping,@RequestParam,@ModelAttribute
+-springframework.http  ResponseEntity
+
+SPRING-WEBMVC
+-springframework.web.servlet - ModelAndView
+
+SPRING-CONTEXT:
+-SPRINGFRAMEWORK.STEREOTYPE - Contiene anotaciones que clasifican clases como componentes gestionados por Spring: @Service,@Repository,@Controller.
+-SPRINGFRAMEWORK.CONTEXT - Ayuda en la configuración de beans. Usa anotaciones como @Configuration,@ComponentScan,@PropertySource,@Component,@Bean,@Autowired y OTRAS CONFIGURACIONES EN SPRINFRAMEWORK.
+-springframework.ui - Objeto Model
+
+RT(FORMA PARTE DEL JDK):
+-JAVA.UTIL - Listas, pilas(stack)
+-JAVA.LANG - Integer y otros datos no primitivos, y system.out
+-JAVAX SWING - JOptionPane
+-UTIL.FUNCTION - Interfaces funcionales como BiFunction
+-JAVA.SQL - Es JDBC

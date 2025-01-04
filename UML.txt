@@ -42,7 +42,7 @@ Tipos de diagramas:
 11) De perfil
 12) De paquetes.
 
-DE CASOS DE USO
+DE CASOS DE USO:
 Se elabora desde el punto de vista del usuario.
 Se basa en roles, no en personas.
 Por lo tanto, un rol también puede ser un sistema con el que interactúe la aplicación.
@@ -52,16 +52,84 @@ Preguntas a realizar:
 1) Quienes van a interactuar con la aplicacion?(roles)
 2) Cuáles son las funciones que debe realizar la aplicacion?
 
+Comprobación WAVE (para saber si el caso de uso es un caso de uso)
+1)What- Un caso de uso debe describir qué hace el sistema en respuesta a una interacció del actor, no cómo lo hace.
+2)Actor- U caso de uso debe estar descrito desde la perpectiva del actor.
+3)Valor- Todo caso de uso debe proporcionar valor a sus actores. Si no hay un beneficio claro o un resultado observable para el actor, el caso de uso debe ser redefinido.
+4)Escenario - En el diagrama debe haber un inicio claro, una serie de interacciones y un resultado o final definido. El diagrama debe tener un flujo que representen un escenario completo.(Desde el login, demas fucnciones hasta el logout)
+
 Actores principales van a la izquierda.
 Elipses-->Funcionalidades(Casos de uso base)
 Lineas-->Asociaciones(Entre actores y casos de uso)
 Muñecos -->Actores
+
+RELACIÓN "CÓMO INTERACTÚA CON...":
 Las siguientes se llaman dependencias:
 Lineas punteadas-->Include(Asociación de un caso de uso base del cual depende necesariamente). Debe ir por arriba del caso base.
 Lineas punteadas-->Extend(Asociación de un caso de uso base del cual depende opcionalmente)Puede que el usuario decida escoger esa opcion o no.  Debe ir por abajo del caso base.
+Los extends no son condicionales.
+No hay que abusar de las dependencias. Muchas veces son casos de uso independientes.
+
 
 El extend se encuetra relacionado con los "Puntos de extensión" que son las conductas que debe realizar el actor para activar esa opción.
 
+RELACION "ES UN TIPO DE..." o "ES UNA FORMA DE...":
+Generalización --> En UML hace referencia a la herencia. En UML se representa con una linea con una flecha triangular hacia el caso de uso general (padre). El padre debe ir en la parte superior.
+
+
+
+---------------------------------------------------------------------------------------------
+
+DIAGRAMA DE CLASE:
+Es el segundo diagrama que se debe elaborar.
+Muestra cómo se organiza y estructura un sistema.
+Se ennfoca en la estructura interna del sistema.
+Muestra cómo está organizado en tñermios de clases y objetos.
+
+Facilita el diseño del sistema.
+Documenta el sistema.
+Facilita la comunicación.
+Es la base de otros diagramas UML.
+
+El diagrama se conforma de "clasificadores" que son rectángulos que se dividen en 3 filas:
+1) Nombre de la clase.
+2) Atributos
+3) Métodos
+
+.-------------------------------------------------------.
+.							.
+.                      Nombre				.
+.-------------------------------------------------------.
+.							.
+.                     Atributos				.
+.               + variable:tipoDeDato			.
+.							.
+.-------------------------------------------------------.
+.							.
+.                   Métodos				.
+.	constructor(variable:tipoDeDato)		.
+.  +metodo(variable:tipoDeDato):tipoDeRetornoDeDato	.		
+.							.
+.							.
+.-------------------------------------------------------.
+
+Modificadores de acceso:
+
++ público
+- privad
+# protected
+
+ASOCIACIÓN ENTRE CLASES:
+Se crean cuando una clase  conoce a otra y tiene una referencia a ella.
+Se representa con una linea que conecta 2 clases (clasificadores).
+Hay de 2 tipos:
+1)Simple: una clase se asocia sólo a otra clase
+2)Múltiple: una clase se asocia a varias clases. De empleado a Director,Gerente,Trabajador.
+Se puede especificar el "tipo de asociación". Se coloca un verbo sobre la línea. Es opcional.
+Se puede especificar la "direccionalidad" del "tipo de asociación". Se coloca un signo de mayor que (>) o menor que(<) a un lado del verbo.
+Se puede especificar la "multiplicidad" . 1:1 , 1:N, N:N , 1:10
+
+Video 11
 
 
 

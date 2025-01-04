@@ -1,14 +1,16 @@
 package practica3;
 
-import java.sql.*;
+import java.sql.*; // ESTE ES EL PAQUETE DE JDBC.
 
 
 //CONSULTA
-//En este proyecto estamos usando JDBC(Java Database Connectivity) que es el otro nombre para la librería mysql-connector-java. No es está utilizando nada más.
-// JDBC es la API estádar de Java para conectarse a bases de datos relacionales.
+//En este proyecto estamos usando JDBC(Java Database Connectivity). No es está utilizando nada más.
+//mysql-connector-java ES UNA ESPECIFICACIÓN DE JDBC. SIN EMBARGO, NO ES NECESARIO IMPORTARLO PORQUE DEBE ESTAR EN EL CLASSPATH. EN ESTA CLASE NO SE USA DE FORMA EXPLÍCITA.
+// JDBC es la API estádar de Java para conectarse a bases de datos relacionales. Es una especificación.
 
 // SIEMPRE NECESITAREMOS USAR UN DRIVER PARA CONECTARNOS A LA BASE DE DATOS Y TRADUCIR EL CÓDIGO JAVA A SQL. EN ESTE CASO NO LO ESTAMOS DEFINIENDO EXPLÍCITAMENTE, PORQUE YA ESTA EN EL CLASSPATH.
 // DE NO ESTAR, Class.forName("com.mysql.cj.jdbc.Driver")
+//JDBC es tambien una especificación. La implementación serían los drivers, en este caso  mysql-connector-java
 
 public class Base_de_datos {
 	
@@ -19,7 +21,7 @@ public class Base_de_datos {
 			Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pruebas", "root","");
 			//Hay que recordar de DriverManager es un método estático. No lo instanciamos antes de aplicar el método.
 			
-			//Statament es una clase de la librería java.sql. Todavía no utilizamos jdbc.
+			//Statament es una clase de la librería java.sql.
 			Statement miStatement = miConexion.createStatement();
 			
 			

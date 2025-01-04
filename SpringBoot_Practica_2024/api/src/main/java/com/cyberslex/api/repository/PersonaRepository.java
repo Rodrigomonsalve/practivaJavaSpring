@@ -21,7 +21,7 @@ import com.cyberslex.api.entity.Persona;
 public interface PersonaRepository extends BaseRepository<Persona, Long>{
 	
 	
-	// ESTE ES UN MÉTODO DERIVADO. NOS LO PROVEÉ JPAREPOSITORY
+	// ESTE ES UN MÉTODO DERIVADO. NOS LO PROVEÉ JPAREPOSITORY. findBy ES COMO UN "SELECT",  "Nombre" ES EL NOMBRE DEL ATRIBUTO DE LA ENTIDAD Y "Containing" SIGNIFICA QUE VA A BUSCAR RESULTADOS PARCIALES: SELECT * FROM ++++ WHERE nombre LIKE %JUAN%;
 	// JPA NOS DA KEYWORDS PARA SER USADOS EN EL NOMBRE DEL MÉTODO. NO PUEDES NOMBRARLO COMO TÚ QUIERAS.
 	// DIGAMOS QUE LA QUERY SE ENCUENTRA EN EL NOMBRE DEL MÉTODO.
 	// LAS KEYWORDS SON MUCHAS, POR LO QUE HAY QUE INVESTIGARLOS.
@@ -35,7 +35,8 @@ public interface PersonaRepository extends BaseRepository<Persona, Long>{
 	
 	
 	 
-	// SE USA JPQL.
+	// SE USA JPQL (Java Persistence Query Language). SE DEBEN USAR LOS NOMBRES DE LAS ENTIDADES(CLASES), NO EL DE LAS TABLAS
+	// LOS 2 PUNTOS EN :filtro SIGNIFCA QUE AHÍ SE VA A GUARDAR UN VALOR QUE VIENE DE LOS PARÁMETROS AL INVOCARSE EL MÉTODO.
 	@Query(value = "SELECT p FROM Persona p WHERE p.nombre LIKE %:filtro% OR p.apellido LIKE %:filtro%")
 	List<Persona> search(@Param("filtro") String filtro);
 	

@@ -2,15 +2,17 @@
 
 <!--ESTE CÓDIGO XML ES INDISPENSABE EN CONEXIONES A BBDD REALIZADAS A TRAVÉS DE HIBERNATE. NO NOS ES ÚTIL EL CÓDIGO JAVA (PruebasJDBC.java). ESE CÓDIGO SÓLO SE USA PARA REALIZAR UNA PRUEBA-->
 
-<!-- Hiberate es una herramienta de ORM que proporciona una solución para mapear las clases Java a tablas.Es una implementación de JPA.Si usas Hibernate estas usando JPA, pero no al revés. JPA proporcioa las anotaciones Entity, Id, Column, EntityManager, etc.Hibernate las usa-->
+<!-- Hibernate (HIBERNATE-CORE) es un framework de Java, y ORM que proporciona una solución para mapear las clases Java a tablas.Es una implementación de JPA. JPA es una especificación de Java. Si usas Hibernate estas usando JPA (JAKARTA.PERSISTENCE(antes JAVAX.PERSISTENCE)), pero no al revés. JPA proporcioa las anotaciones Entity, Id, Column, EntityManager, etc.Hibernate las usa-->
 <!-- Para usar JPA siempre debes usar alguna implementacion de JPA como Hibernate. JPA sólo es una especificación, no una implementacion. Sólo defiene interfaces y anotaciones. Otra implementación es EclipseLink o OpenJPA-->
-<!-- Hibernate usa JDBC, como lo vemos a cotinuación, para la conexion a la base de datos y ejecucion de consultas. Maneja internamete todas las operaciones-->
+<!-- Hibernate usa JDBC (JAVA.SQL), como lo vemos a cotinuación, para la conexion a la base de datos y ejecucion de consultas. Maneja internamete todas las operaciones-->
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
    <session-factory>
    
      
     <!-- El driver sirve para traducir las cosultas de Java a Mysql. Hay una diferente por cada tipo de SGBD-->
+     <!-- Hay que recordar que JDBC es tambien una especificación. La implementación serían los drivers, en este caso  mysql-connector-java-->
+    
       <property name = "connection.driver_class">
         com.mysql.jdbc.Driver
       </property>

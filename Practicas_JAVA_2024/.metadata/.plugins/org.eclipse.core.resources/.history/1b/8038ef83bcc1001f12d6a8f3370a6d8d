@@ -1,0 +1,90 @@
+package prcatica1; 
+
+import pratica2.Generics;
+
+public class ClasesYmetodos {
+	
+	public static int variable;
+	public int variable2 = 2; //Modificador de acceso "Default". Sólo accesibles desde clases del mismo paquete.
+	static String variable3 = "Hola"; // No se pueden crear variables del mismo nombre, aunque sean de tipo diferente.
+	public static int variable4 = 3;
+	public static final int variable5 = 0; // Todas las variables "final" deben ser inicializadas. Si no se hace aquí, se puede hacer desdel el contructor.
+	public final int variable6;
+	public int VARIABLE7;
+	
+	public int[] arrai = {1,2,3,4};
+	public int[] arrai2;
+	public int[] arrai3 = new int[10];
+	public Generics<?>[]  arrai4;
+
+	
+	
+	//No se pueden instaciar las interfaces, pero sì crear objetos de ellas.
+	Interfaz objetoInterfaz = null;
+	
+	
+	public ClasesYmetodos() {
+	 this.variable6 = 0;
+		
+
+}
+	public void variable2() {    //SE PERMITE  CREAR METODOS DE IGUAL NOMBRE QUE UNA VARIABLE YA DECLARADA. EN JAVASCRIPT, NO.
+		System.out.print("Hola");
+	}
+	
+	public static Empleados pruebaObjeto() {    
+		
+		Empleados empleado1 = null;
+		empleado1 = new Empleados();
+		Empleados empleado = new Empleados();
+		new Empleados();          // Es otra forma de instanciar Empleados.
+		
+		return new Empleados();   //Las lñineas anteriores las podemos ahorrar, simplemente retornando un objeto de tipo Empleados.
+	}
+	
+	public static int Cadena(int numero1, int numero2){
+		
+		variable = numero1 + numero2;
+		return variable;
+	}
+	
+	public ClasesYmetodos(int variable, int variable7) {
+		ClasesYmetodos.variable = 6;
+		this.VARIABLE7 = variable7;
+		this.variable6 = 0;
+	}
+
+
+	public static void pruebaFinal() {
+		variable3 = "Recto"; // Todos las variables invocadas dentro de un método static, deben ser static también.
+		System.out.println(variable3);
+		
+		// variable5 = 8; Las variables final no se pueden modificar. Siempre tendrán el mismo valor.
+		
+}
+	
+	public void pruebaStatic() {
+		System.out.println("Hola");
+	}
+	
+	public void variables() {
+		
+		String nombre="Rodrigo";  //ESTA ES UNA VARIABLE LOCAL. SÓLO ES ACCESIBLE DESDE ESTE BLOQUE DE CÓDIGO. EN JAVASCRIPT SÓLO SE CREAN VARIABLES LOCALES USANDO "LET". SI USAS "VAR" ES GLOBAL AUN Y CUANDO LA DECLARES DENTRO DE UN BLOQUE DE CÓDIGO. ESTO NO EXISTE EN JAVA.
+		System.out.println(nombre);
+		
+		variable2=5;			// ESTA ES UNA VARIABLE GLOBAL. ES ACCESIBLE Y MODIFICABLE DESDE CUALQUIER PARTE DEL CÓDIGO. EN JAVASCRIPT SE CREAN USANDO "VAR".
+		System.out.println(variable2);
+		
+		//variable5=9;  // LAS VARIABLES "FINAL" NO SE PUEDEN MODIFICAR AUN Y CUANDO SEA GLOBALES.
+		
+	}
+
+
+	public static void main(String [] args) {  //Este método debe encontrarse en la "Clase Principal". 
+		//System.out.println(nombre); LAS VARIABLE CREADAS DENTRO DE UN BLOQUE DE CÓDIGO, NO SON ALCANZABLES FUERA DE ÉL.
+		
+		pruebaFinal(); // Todos los métodos invocados dentro de un metodo static, deben ser static tambièn.
+		System.out.println("El resultado de la suma es: " + Cadena(1,3));		
+	}
+
+}

@@ -1,0 +1,74 @@
+package prcatica1;
+
+import java.util.*;
+
+public class Estructuras_de_control extends ClasesYmetodos {
+	
+	//Formas de declarar un array
+	static int[] conjunto = new int[10];
+	static int[] conjunto2 = {3,6 ,6 ,10 ,15, 18, 22}; // A los arraylist no se les tiene que decir cuántos elementos debe guardar, de forma a priori.
+	static ArrayList<Integer> lista = new ArrayList<Integer>();
+	
+	
+	
+	public static void estructuraFor(int i) {
+			for(i--; i<=30; i++) {
+				System.out.println(i);
+	}
+			
+			System.out.println("Contenido de lista:" + lista);
+			
+			for (int a : conjunto2) {         //Esta estructura for sirve para copiar los elementos de una colección en otra.  En este caso es  de conjunto2 a "lista". a es un iterador que recorre conjunto2 y va recogiendo los valores de conjunto2. Ambos tienen que ser del mismo tipo.
+				
+				lista.add(a);
+				System.out.println("Contenido de lista:" +lista);
+			}
+}
+	
+	public static void estructuraArray() {
+//		int[] conjunto3 = conjunto;
+//		conjunto = new int[12];
+//		for(int i=0; i<conjunto.length; i++) {
+//			System.out.println(conjunto[i]=conjunto3[i]);
+		
+		
+//		System.out.println(conjunto2[1]);
+//		for(int i=0; i<conjunto2.length; i++) {
+//			System.out.println(conjunto2[i]);
+//		}
+		
+		for(int i=0; i<conjunto.length; i++) {
+			conjunto[i]=i; //[i] es la posición, no el valor. Las posiciones comienzan a contarse en 0.
+			System.out.println(conjunto[i]);// Sólo se puede imprimir el contenido de un array, a través de un bucle for. Esto no sucede con las colecciones como una ArrayList.
+			
+		}
+		
+		for(int i=0; i<conjunto.length; i++) {
+			System.out.println(conjunto[i]);
+			
+		}
+		conjunto= new int[12];//Si modificamos la longitud de un array, su contenido se altera. Eso no sucede con las listas.
+		for(int i=0; i<conjunto.length; i++) {
+			System.out.println(conjunto[i]);
+			
+		}
+		
+		Estructuras_de_control.pruebaObjeto();  // El método de la clase heredada, se puede ejecutar, aunque no se haya desarrollado dentro de esta clase, ni sobreescrito.
+		
+		
+		if(1==1) {
+			
+			System.out.println(true);;
+		}
+
+		
+	}
+	
+	
+	
+	public static void main(String [] args) {
+		estructuraFor(25);
+		//estructuraArray();
+	}
+
+}

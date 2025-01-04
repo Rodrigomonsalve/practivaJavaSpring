@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.3</version>
+		<artifactId>spring-boot-starter-parent</artifactId><!--ES LO QUE PROVOCA QUE NO TENGAMOS QUE ESTABLECER VERSIONES: ESTAMOS HEREDANDO TODAS LAS CONFIGURACIONES DEL pom spring-boot-starter-parent-->
+		<version>3.3.3</version> <!-- EL POM  spring-boot-starter-parent CUENTA CON UN BOM-->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cyberslex</groupId>
@@ -30,11 +30,16 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	<!--SPRING-CONTEXT SE ENCUENTRA EN TODOS LOS STARTERS. ES LA BASE DE SPRING BOOT-->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId><!--ENGLOBA A SPRING DATA JPA, HIBERNATE, SPRING ORM, SPRING JDBC. NO TRAE DRIVERS.-->
 		</dependency>
+		<!--<dependency>
+      		<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-jdbc</artifactId>  ENGLOBA A SPRING DATA JDBC, SPRING DATA JDBC. NO INCLUYE HIBERNATE, NI JPA.
+    	</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
@@ -45,7 +50,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId><!--ENGLOBA SPRING WEB, SPRING MVC, JACKSON, SPRING BOOT STARTE TOMCAT, SLF4J(LOGGER)-->
 		</dependency>
 
 		<dependency>

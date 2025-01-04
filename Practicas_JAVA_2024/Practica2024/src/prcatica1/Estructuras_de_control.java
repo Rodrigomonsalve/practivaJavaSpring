@@ -54,6 +54,19 @@ public class Estructuras_de_control extends ClasesYmetodos {
 		}
 		
 		Estructuras_de_control.pruebaObjeto();  // El método de la clase heredada, se puede ejecutar, aunque no se haya desarrollado dentro de esta clase, ni sobreescrito.
+		
+		
+		if(true) {
+			
+			System.out.println(true);
+		}
+		
+		
+		//SIRVE PARA ITERAR LISTAS Y ARREGLOS. NO EXISTE EN JAVASCRIPT.
+		for(int i : conjunto2) {
+			
+			System.out.println(i);
+		}
 
 		
 	}
