@@ -31,3 +31,29 @@ RT(FORMA PARTE DEL JDK):
 -JAVAX SWING - JOptionPane
 -UTIL.FUNCTION - Interfaces funcionales como BiFunction
 -JAVA.SQL - Es JDBC
+
+jakarta.xml.bind o javax.xml.bind (ES JAXB)
+-jakarta.xml.bind.annotation - Tiene anotaciones como @XmlRootElement, @XmlElement
+
+SPRING-WS-CORE(Spring web services)
+- org.springframework.ws.server.endpoint  - Trae anotaciones como @Endpoint,@PayloadRoot,@RequestPayload,@ResponsePayload
+- org.springframework.ws.wsdl - objeto DefaultWsdl11Definition
+- org.springframework.ws.config.annotation - Trae la anotación @EnableWS
+
+SPRING-XML
+- org.springframework.xml.xsd - objetos como SimpleXsdSchema y XsdSchema
+
+
+
+
+
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:hel="http://example.com/soap">
+<soapenv:Header/>
+<soapenv:Body>
+    <hel:HelloRequest>
+        <hel:name>Value1</hel:name>
+    </hel:HelloRequest>
+</soapenv:Body>
+</soapenv:Envelope>

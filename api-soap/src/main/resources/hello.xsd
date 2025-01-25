@@ -1,0 +1,39 @@
+<!--2)SEGUNDO PASO DE LA SOLICITUD-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://example.com/soap" xmlns="http://example.com/soap" elementFormDefault="qualified"> <!--El "namespace" no es una url real: no es accesible. Sólo tiene como finalidad identificar de forma única a los elementos de este esquema. Puede que existan elementos  con el mismo nombre.  -->
+	<xs:element name="HelloRequest"><!--Es la información que deerá ser enviada al servidor--> <!--ESTO (HelloRequest) ES UNA CLASE EN JAVA. ES LO QUE SE CORRESPONDE A ENTIDADES EN API REST-->
+		<xs:complexType>
+			<xs:sequence >
+				<xs:element name="name" type="xs:string"/> <!--Este es un elemento hijo del elemento "HelloRequest". Puede tener muchos--><!--Se deberá enviar al servidor un tipo de dato String, bajo la etiqueta name-->
+				<xs:element name="lastName" type="xs:string"/>
+				<xs:element name="id" type="xs:int"/>
+			</xs:sequence>									
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="HelloResponse"><!-- Esta es la repuesta que el servidor eviará al navegador-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="message" type="xs:string"/><!-- Sólo deberá llegar un String-->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>
+
+<!--A ESTE ARCHIVO SE LE SUELE DENOMINAR "esquema"-->
+<!-- UN ARCHIVO .XSD ES LA FORMA DE ESTABLECER LAS REGLAS DE LA INFORMACIÓN INTERCAMBIADA (QUE SIEMPRE SERÁ EN XML) Y LA VALIDA. SIEMPE SERÁ OBLIGATORIO USAR ESTE ARCHIVO. EN API REST ESTAS REGLAS SE ESTABLECEN EN HERRAMIENTAS COMO SWAGGER,  Y NO SON OBLIGATORIAS -->
+<!--PUEDES TENER MULTIPLES ARCHIVOS xsd O COLOCAR TOOS TUS ELEMENTOS EN UN SOLO ARCHIVO. LOS ARCHIVOS xsd SON CARGADOS POR LA CLASE HelloWsdlConfig EN SU METODO helloSchema Y USADO POR EL METODO  defaultWsdl11Definition. ENTONCES PUEDES CREAR MULTIPLES DE ESTOS METODOS.-->
+<!--TODAS LAS SOLICITUDES SOAP DEBEN HACERSE CON EL METOD POST(COMO EN POSTMAN). SOAP NO ESTA DISEÑADO PARA EXPONER RECURSOS EN UNA URL ESPECÍFICA, COMO SÍ LO  HACE REST. EN SU LUGAR DEBES ENVIAR UN XML TAL Y COMO ESTA DESCRITO EN EL ARCHIVO WSDL Y TE DEVOLVERÁ LA INFORMACIÓN REQUERIDA.-->
+<!-- UN EJEMPLO DE INFORMACIÓN ENVIADA AL SERVIDOR QUE CUMPLE LAS REGLAS DE ESTE ARCHIVO .XSD, ES:-->
+
+<!-- 
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:hel="http://example.com/soap">
+<soapenv:Header/>
+<soapenv:Body>
+    <hel:HelloRequest>
+        <hel:name>Value1</hel:name>
+    </hel:HelloRequest>
+</soapenv:Body>
+</soapenv:Envelope>-->           <!--LOS PREFIJOS, COMO hel O soapenv SOLAMENTE SON ¡¡¡IDENTIFICADORES!! PARA HACER MAS LEGIBLE LA SOLICITUD. SI EL NAMESPACE ES http://example.com/ EL PREFIJO, EN LUGAR DE "soapenv", PODRÍA SER "cust", PARA DIFERENCIARLO DE OTRAS SOLICITUDES CON LOS MISMOS ELEMENTOS-->

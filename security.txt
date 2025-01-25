@@ -1,0 +1,45 @@
+https://spring.io/projects/spring-security ---> DOCUMENTACION
+
+AUTENTICACION VS AUTORIZACION
+	AUTENTICACION: ¿Quien soy yo?
+	AUTORIZACION: Una vez autenticado,se valida qué permisos y roles tiene esa persona. 
+
+
+SE INTEGRA EN EL CICLO DE VIDA DE JAKARTA.
+
+DelegatingFilterProxy
+FilterChainProxy  ---> Componente central de Spring Security. Maneja la coordinacion de filtros.
+SecurityFilterChain  ---> Interfaz que representa una cadena de filtros.
+
+
+HAY 2 TIPOS DE ARQUITECTURAS DE SPRING SECURITY:
+1) Para proteger aplicaciones basadas en servlets.(tradicionales como MVC) Es la que se va a estudiar.
+2) Para proteger aplicaciones reactivas.(no bloqueantes como Webflux)
+
+EN AMBOS CASOS, SPRING SECURITY PUEDE PROTEGER APLICACIONES COMPLETAS O SÓLO APIS(BACKEND).
+
+
+
+
+HAY 2 TIPOS DE APLICACIONES, RESPECTO A LA AUTENTICACION QUE USAN:
+1) Stateful - se crean sesiones basadas en cookies(como RI). No es escalable, porque la sesion del usuario sólo se crea en un servidor. Cada sesion consume recursos del servidor.
+2) Stateless - se basa en tokens(Es la que se va a estudiar). No se mantiene una sesion en el servidor. No consumen tantos recursos. Permite la escalabilidad, porque, derivado de que los tokens se enviaN en cada peticion http(cifrados), puede responder cualquier servidor.
+
+
+JWT:
+Se conforma de 3 datos:
+1)Encabezado. Contiene informacion sobre tipo de token y algoritmo de firma.Esta en base64.
+2)Carga útil(Payload). Contiene nombre de usuario y roles. Esta en base64.
+3)Firma.Hash. Esta en SHA256.A la funcion hash ingresan los sigueites valores:
+base64UrlEncode(header) + "." +
+base64UrlEncode(payload),
+your-256-bit-secret
+
+Si se modifica por un hacker el payload, el cual sí se puede acceder, la firma no cambia. No habría coincidencia.
+
+
+
+Ejemplo:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
