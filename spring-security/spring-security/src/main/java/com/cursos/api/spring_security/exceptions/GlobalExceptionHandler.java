@@ -4,6 +4,7 @@ import com.cursos.api.spring_security.dto.ApiError;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,11 +33,22 @@ public class GlobalExceptionHandler {
         ApiError apiError=new ApiError();
         apiError.setBackendMessage(exception.getLocalizedMessage());
         apiError.setUrl(request.getRequestURI().toString());
-        apiError.setMethod(request.getMethod());()
+        apiError.setMethod(request.getMethod());
         apiError.setTimestamp(LocalDateTime.now());
         apiError.setMessage("Error en la peticion enviada");
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiError);
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<?>  handlerAccessDeniedException(HttpServletRequest request, AccessDeniedException exception){
+        ApiError apiError=new ApiError();
+        apiError.setBackendMessage(exception.getLocalizedMessage());
+        apiError.setUrl(request.getRequestURI().toString());
+        apiError.setMethod(request.getMethod());
+        apiError.setMessage("Acceso denegado. No tienes los permisos suficientes para acceder a esta funcion");
+
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(apiError);
     }
 
 }

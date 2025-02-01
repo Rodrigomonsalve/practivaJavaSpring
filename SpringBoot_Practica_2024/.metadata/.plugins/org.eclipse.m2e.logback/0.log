@@ -8828,3 +8828,4 @@ org.xml.sax.SAXParseException: s4s-att-not-allowed: El atributo 'name' no puede 
 2025-01-13 02:36:00,584 [Worker-423: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-01-13 02:36:00,587 [Worker-423: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from target\generated-sources to target\classes
 2025-01-13 02:36:00,593 [Worker-423: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\api-soap\src\test\resources
+2025-01-21 10:48:53,814 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

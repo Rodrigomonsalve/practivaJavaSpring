@@ -11,6 +11,12 @@ DelegatingFilterProxy
 FilterChainProxy  ---> Componente central de Spring Security. Maneja la coordinacion de filtros.
 SecurityFilterChain  ---> Interfaz que representa una cadena de filtros.
 
+SecurityContextHolder
+	SecurityHolder
+		Authetication
+			Principal
+			Credentials
+			Authorities
 
 HAY 2 TIPOS DE ARQUITECTURAS DE SPRING SECURITY:
 1) Para proteger aplicaciones basadas en servlets.(tradicionales como MVC) Es la que se va a estudiar.
@@ -18,13 +24,13 @@ HAY 2 TIPOS DE ARQUITECTURAS DE SPRING SECURITY:
 
 EN AMBOS CASOS, SPRING SECURITY PUEDE PROTEGER APLICACIONES COMPLETAS O SÓLO APIS(BACKEND).
 
-
-
+Cada arquitectura de las mencionadas, tiene a su vez otras 2:
+1) De autenticació.
+2) De autorizacion.
 
 HAY 2 TIPOS DE APLICACIONES, RESPECTO A LA AUTENTICACION QUE USAN:
 1) Stateful - se crean sesiones basadas en cookies(como RI). No es escalable, porque la sesion del usuario sólo se crea en un servidor. Cada sesion consume recursos del servidor.
 2) Stateless - se basa en tokens(Es la que se va a estudiar). No se mantiene una sesion en el servidor. No consumen tantos recursos. Permite la escalabilidad, porque, derivado de que los tokens se enviaN en cada peticion http(cifrados), puede responder cualquier servidor.
-
 
 JWT:
 Se conforma de 3 datos:
@@ -37,9 +43,18 @@ your-256-bit-secret
 
 Si se modifica por un hacker el payload, el cual sí se puede acceder, la firma no cambia. No habría coincidencia.
 
-
-
 Ejemplo:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
 eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
 SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+Para entender mejor la estructura de un proyecto con Spring Security, podemos decir que se divide en las siguientes funcionalidades:
+1)La propia logica de negocio que se va a proteger.
+2)Registro de nuevos usuarios. Genera un jwt.
+3)Autenticacion(validacion) de usuarios ya registardos. Se compara usuario y contraseña y, en caso de ser validos, genera un jwt cada vez que el usuario pida su validacion(logueo).
+4)Obtener perfil de usuario. Se debe ya enviar el jwt a traves de la peticion http. Es necesario un filtro.
+5)Autorizacion. Todos los usuarios pueden ser autenticados, pero  deberìan tener autorizaciones diferentes. De lo contrario, todos podrian hacer todo.
+
+Cada una de esas fases cuenta con su propio modelo-vista-controlador.(controlador, servicio, entidad, dto)
+
+5) Creacion de filtros. Sirven para enviar el jwt a traves de las peticiones http, y se registran en el filter chain.

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Pageable;
 
@@ -21,6 +22,8 @@ import java.util.Optional;
         @Autowired
         CategoryService categoryService;
 
+        //@PreAuthorize("hasAnyRole('ADMINISTRATOR', 'ASSISTANT_ADMINISTRATOR')")
+        @PreAuthorize("hasAuthority('READ_ALL_CATEGORIES')")
         @GetMapping
         public ResponseEntity<Page<Category>> findAll(Pageable pageable){
             Page<Category> categoriesPage=categoryService.findAll(pageable);
@@ -33,6 +36,9 @@ import java.util.Optional;
             return ResponseEntity.notFound().build();
         }
 
+
+        //@PreAuthorize("hasAnyRole('ADMINISTRATOR', 'ASSISTANT_ADMINISTRATOR')")
+        @PreAuthorize("hasAuthority('READ_ONE_CATEGORY')")
         @GetMapping("/{categoryId}")
         public ResponseEntity<Category> findOneById(@PathVariable Long categoryId){
             Optional<Category> category=categoryService.findById(categoryId);
@@ -45,6 +51,8 @@ import java.util.Optional;
         }
 
 
+        //@PreAuthorize("hasRole('ADMINISTRATOR'")
+        @PreAuthorize("hasAuthority('CREATE_ONE_CATEGORY')")
         @PostMapping()
         public ResponseEntity<Category> createOne(@RequestBody @Valid SaveCategory saveCategory){
 
@@ -52,6 +60,8 @@ import java.util.Optional;
             return ResponseEntity.status(HttpStatus.CREATED).body(category);
         }
 
+        //@PreAuthorize("hasAnyRole('ADMINISTRATOR', 'ASSISTANT_ADMINISTRATOR')")
+        @PreAuthorize("hasAuthority('UPDATE_ONE_CATEGORY')")
         @PutMapping("/{categoryId}")
         public ResponseEntity<Category> updateOneById(@PathVariable Long categoryId, @RequestBody @Valid SaveCategory saveCategory){
 
@@ -59,7 +69,8 @@ import java.util.Optional;
             return ResponseEntity.ok(category);
         }
 
-
+        //@PreAuthorize("hasRole('ADMINISTRATOR')")
+        @PreAuthorize("hasAuthority('DISABLE_ONE_CATEGORY')")
         @PutMapping("/{categoryId}/disable")//ESTUDIAR ARQUITECTURA DE APIS (controladores, stores y colecciones)
         public ResponseEntity<Category> disableOneById(@PathVariable Long categoryId){
 
