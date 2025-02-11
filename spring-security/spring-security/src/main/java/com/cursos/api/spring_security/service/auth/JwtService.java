@@ -1,20 +1,17 @@
 package com.cursos.api.spring_security.service.auth;
 
-import com.cursos.api.spring_security.persistence.entity.User;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.crypto.SecretKey;
-import java.security.Key;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -26,7 +23,7 @@ public class JwtService {
     @Value("${security.jwt.secret-key}")
     private String SECRET_KEY;
 
-    //Metodo destinado a generar el jwt. Se genera despues de registrar a un nuevo usuario y pertenece a éste. Este metodo es invocado por AuthenticationService por su metodo registerOneCustomer, cuya finalidad es devolver en formato json, los datos del nuevo usuario registrado.
+    //Metodo destinado a generar el jwt. Se genera despues de registrar a un nuevo usuario y al hacer login. Este metodo es invocado por AuthenticationService por su metodo registerOneCustomer, cuya finalidad es devolver en formato json, los datos del nuevo usuario registrado, y login.
     public String generateToken(UserDetails user,  Map<String,Object> extraClaims) {
         Date issuedAt=new Date(System.currentTimeMillis());
         Date expiration=new Date((EXPIRATION_IN_MINUTES*60*1000)+issuedAt.getTime());
@@ -105,14 +102,17 @@ public class JwtService {
         byte[] passwordDecoded= Decoders.BASE64.decode(SECRET_KEY); //SECRET_KEY es una propiedad en el application.properties que tiene guardada una frase cuqluiera, pero codificada en base64. En este caso, la estamos decodificando.
         //byte[] key=SECRET_KEY.getBytes();
 
-        return Keys.hmacShaKeyFor(passwordDecoded);
+        return Keys.hmacShaKeyFor(passwordDecoded); //Genera una clave segura para firmar el jwt.
     }
 
+    //Metodo invocado por el filtro, que sirve para validar el jwt del usuario que realiza la petición. Se ejecuta entonces, en cada petición.
     public String extractUsername(String jwt) {
 
+        System.out.println("Este es el jwt en extractUsername"+extractAllClaims(jwt));
         return extractAllClaims(jwt).getSubject();
     }
 
+    //Este metodo, en realidad, es quien nos ayuda a validar el jwt de cada peticion que envie el usuario. Es invocado por extractUsername.
     private Claims extractAllClaims(String jwt) {
 
         //CON VERSION 0.11.5 DE JJWT:
@@ -120,7 +120,24 @@ public class JwtService {
                 .parseClaimsJws(jwt).getBody();*/
 
         //CON VERSION 0.12.3 DE JJWT:
-        return Jwts.parser().verifyWith(generateKey()).build()
+        return Jwts.parser().verifyWith(generateKey()).build()   //AQUI SE VALIDA EL jwt USANDO LA CLAVE GENERADA CON generateKey(), Y LUEGO SE OBTIENE EL PAYLOAD DEL jwt.
                 .parseSignedClaims(jwt).getPayload();
+    }
+
+    //ESTUDIAR startsWith y todos lo relacionado con request response.
+    //Se ejecuta desde el filtro, antes de validar el jwt. para despues hacerlo.
+    public String extractJwtFromRequest(HttpServletRequest request) {
+
+        String authorizationHeader=request.getHeader("Authorization");  //Dame el  contenido de la cabecera "Authorization". En nuestro caso ahi viene el jwt.
+        if(!StringUtils.hasText(authorizationHeader) || !authorizationHeader.startsWith("Bearer ")){  //"Bearer" es la palabra con que siempre va iniciar el campo del jwt. // Si no viene jwt  ya no se ejecuta lo que falta del metodo.
+            return null;
+        }
+
+        //ESTUDIAR split
+        return authorizationHeader.split(" ")[1]; //Lo que estamos haciendo es, primero convertir authorizationHeader en un array usando los espacios(" ") de este String como separador de los elementos del array. Luego extraemos el segundo valor([1]) que es nuestro jwt. ["Bearer", "hhuihue7738wjjw...."]
+    }
+
+    public Date extractExpiration(String jwt) {
+        return extractAllClaims(jwt).getExpiration();
     }
 }

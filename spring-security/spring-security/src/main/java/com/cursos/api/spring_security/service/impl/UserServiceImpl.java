@@ -2,9 +2,11 @@ package com.cursos.api.spring_security.service.impl;
 
 import com.cursos.api.spring_security.dto.SaveUser;
 import com.cursos.api.spring_security.exceptions.InvalidPasswordException;
-import com.cursos.api.spring_security.persistence.entity.User;
-import com.cursos.api.spring_security.persistence.repository.UserRepository;
-import com.cursos.api.spring_security.persistence.util.Role;
+import com.cursos.api.spring_security.exceptions.ObjectNotFoundException;
+import com.cursos.api.spring_security.persistence.entity.security.Role;
+import com.cursos.api.spring_security.persistence.entity.security.User;
+import com.cursos.api.spring_security.persistence.repository.security.UserRepository;
+import com.cursos.api.spring_security.service.RoleService;
 import com.cursos.api.spring_security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,6 +24,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private RoleService roleService;
+
     @Override
     public User registerOneCustomer(SaveUser newUser) {  //SaveUser es el dto de User que sirve para registrar nuevos clientes. Se invoca desde AuthenticationService, el cual es invocado a su vez por CustomerController.
 
@@ -31,7 +36,12 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(newUser.getPassword()));
         user.setUsername(newUser.getUsername());
         user.setName(newUser.getName());
-        user.setRole(Role.CUSTOMER);
+        //user.setRole(RoleEnum.CUSTOMER);
+
+        Role defaultRole=roleService.findDefaultRole()
+                        .orElseThrow(()->new ObjectNotFoundException("Role not found"));
+        user.setRole(defaultRole);
+
 
         return userRepository.save(user);
     }

@@ -1,18 +1,20 @@
 package com.cursos.api.spring_security.controller;
 
 import com.cursos.api.spring_security.dto.AuthenticationResponse;
-import com.cursos.api.spring_security.persistence.entity.User;
+import com.cursos.api.spring_security.dto.LogoutResponse;
+import com.cursos.api.spring_security.persistence.entity.security.User;
 import com.cursos.api.spring_security.service.auth.AuthenticationService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
-//En este controlador estamos usando la autorizacion "basada en  metodos" mediante las anotaciones @PreAuthorize. Esto sustituye a la autorizacion basada en coincidencias de url establecida en la clase HttpSecurityConfig.
+//En este controlador estamos usando la autorizacion "basada en  metodos" mediante las anotaciones @PreAuthorize. Esto sustituye a la autorizacion basada en coincidencias de url establecida en la clase HttpSecurityConfig. Tambien sustituye a la "autorizacion personalizada" que es la que actualmente se está ejecutando.
 //Es importante mencionar que la autorizacion "basada en  metodos" mediante las anotaciones como @PreAuthorize, se pueden establecer en el controlador(como es el caso), en el servicio, en el serviceImpl, o en el repositorio. Si lo haces en el repositorio, sería necesario sobrescribir los metodos del JpaRepository para poder colocar la anotacion @PreAuthorize.
+//En caso de que el usuario no este autorizado, a diferencia de la autorizacion "basada en coincidencias", devolverá un error 500Internal Server Error, lo cual no es correcto. Por eso se creó el manejador de excepciones que se encuentra en GlobalExceptionHandler, para que devuelva un error 403Forbiden. Sin embargo, siempre devolverá un AccessDeniedException sin importar si el usuario está autenticado o no, o solamente no está autorizado, lo que no sucede con la autorizacion basada en coincidencias de url.
 @RestController
 @RequestMapping("/auth")
 public class AuthenticationController {
@@ -22,6 +24,7 @@ public class AuthenticationController {
 
     //Este controlador tiene como finalidad autenticar(validar) a usuarios ya registrados ateriormente.
     //http://localhost:9191/api/v1/auth/authenticate
+    //@CrossOrigin
     @PreAuthorize("permitAll")  //URL PUBLICA
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody @Valid AuthenticationRequest authenticationRequest){ //El authenticationRequest es un dto que lleva los datos de un usuario ya registrado. Es como si un usuario intentara loguearse:
@@ -77,4 +80,14 @@ public class AuthenticationController {
         return ResponseEntity.ok(user);                     //Retorna el json referido.
 
     }
+
+    @PostMapping("/logout")
+    public ResponseEntity<LogoutResponse> logout(HttpServletRequest request){
+
+        authenticationService.logout(request);
+        return ResponseEntity.ok(new LogoutResponse("Logout exitoso"));
+    }
+
+
+
 }

@@ -3626,3 +3626,12 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.glassfish
 2024-12-15 10:55:00,005 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_SPRING\MVC_Maven\src\main\resources
 2024-12-15 10:55:00,008 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-12-15 10:55:00,008 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_SPRING\MVC_Maven\src\test\resources
+2025-01-09 11:25:42,633 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-01-09 11:25:57,206 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2025-01-09 11:25:57,207 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_SPRING\CRUD\src\main\resources
+2025-01-09 11:25:57,210 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2025-01-09 11:25:57,211 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_SPRING\CRUD\src\test\resources
+2025-01-09 11:26:05,512 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2025-01-09 11:26:05,513 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_SPRING\MVC_Maven\src\main\resources
+2025-01-09 11:26:05,517 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2025-01-09 11:26:05,518 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dell\Desktop\practivaJavaSpring\Practicas_JAVA_SPRING\MVC_Maven\src\test\resources

@@ -46,6 +46,7 @@ public class GlobalExceptionHandler {
         apiError.setBackendMessage(exception.getLocalizedMessage());
         apiError.setUrl(request.getRequestURI().toString());
         apiError.setMethod(request.getMethod());
+        apiError.setTimestamp(LocalDateTime.now());
         apiError.setMessage("Acceso denegado. No tienes los permisos suficientes para acceder a esta funcion");
 
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(apiError);

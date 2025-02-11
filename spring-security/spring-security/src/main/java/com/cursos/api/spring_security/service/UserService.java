@@ -2,7 +2,7 @@ package com.cursos.api.spring_security.service;
 
 
 import com.cursos.api.spring_security.dto.SaveUser;
-import com.cursos.api.spring_security.persistence.entity.User;
+import com.cursos.api.spring_security.persistence.entity.security.User;
 import jakarta.validation.Valid;
 
 import java.util.Optional;

@@ -2,7 +2,7 @@ package com.cursos.api.spring_security.controller;
 
 import com.cursos.api.spring_security.dto.RegisteredUser;
 import com.cursos.api.spring_security.dto.SaveUser;
-import com.cursos.api.spring_security.persistence.entity.User;
+import com.cursos.api.spring_security.persistence.entity.security.User;
 import com.cursos.api.spring_security.service.auth.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import java.util.List;
 
 //En este controlador estamos usando la autorizacion "basada en  metodos" mediante las anotaciones @PreAuthorize. Esto sustituye a la autorizacion basada en coincidencias de url establecida en la clase HttpSecurityConfig.
 //Es importante mencionar que la autorizacion "basada en  metodos" mediante las anotaciones como @PreAuthorize, se pueden establecer en el controlador(como es el caso), en el servicio, en el serviceImpl, o en el repositorio. Si lo haces en el repositorio, sería necesario sobrescribir los metodos del JpaRepository para poder colocar la anotacion @PreAuthorize.
+//En caso de que el usuario no este autorizado, a diferencia de la autorizacion "basada en coincidencias", devolverá un error 500Internal Server Error, lo cual no es correcto. Por eso se creó el manejador de excepciones que se encuentra en GlobalExceptionHandler, para que devuelva un error 403Forbiden. Sin embargo, siempre devolverá un AccessDeniedException sin importar si el usuario está autenticado o no, o solamente no está autorizado, lo que no sucede con la autorizacion basada en coincidencias de url.
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {

@@ -19,7 +19,8 @@ import java.util.Optional;
 
 //En este controlador estamos usando la autorizacion "basada en  metodos" mediante las anotaciones @PreAuthorize. Esto sustituye a la autorizacion basada en coincidencias de url establecida en la clase HttpSecurityConfig.
 //Es importante mencionar que la autorizacion "basada en  metodos" mediante las anotaciones como @PreAuthorize, se pueden establecer en el controlador(como es el caso), en el servicio, en el serviceImpl, o en el repositorio. Si lo haces en el repositorio, sería necesario sobrescribir los metodos del JpaRepository para poder colocar la anotacion @PreAuthorize.
-//En caso de que el usuario no este autorizado, a diferencia de la autorizacion "basada en coincidencias", devolverá un error 500Internal Server Error, lo cual no es correcto. Por eso se creó el manejador de excepciones que se encuatra en GlobalExceptionHandler, para que devuelva un error 403Forbiden.
+//En caso de que el usuario no este autorizado, a diferencia de la autorizacion "basada en coincidencias", devolverá un error 500Internal Server Error, lo cual no es correcto. Por eso se creó el manejador de excepciones que se encuentra en GlobalExceptionHandler, para que devuelva un error 403Forbiden. Sin embargo, siempre devolverá un AccessDeniedException sin importar si el usuario está autenticado o no, o solamente no está autorizado, lo que no sucede con la autorizacion basada en coincidencias de url.
+//@CrossOrigin // PARA QUE FUNCIONE CORS, DEBE REGISTARSE EN EL FILTERCHAIN (.cors(Customizer.withDefaults())). Esta anotacion puede colocarse sobre la clase o en los metodos controladores que desees. Por defecto, al usarse @CrossOrigin, acepta todos los origenes. // Existe otra forma de configurar CORS que es de forma global, tal como esta en la clase HttpSecurityConfig.
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -41,6 +42,7 @@ public class ProductController {
 
         return ResponseEntity.notFound().build();
     }
+
 
     //@PreAuthorize("hasAnyRole('ADMINISTRATOR', 'ASSISTANT_ADMINISTRATOR')")
     @PreAuthorize("hasAuthority('READ_ONE_PRODUCT')")

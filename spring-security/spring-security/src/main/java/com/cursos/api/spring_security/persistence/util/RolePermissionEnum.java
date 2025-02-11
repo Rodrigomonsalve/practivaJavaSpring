@@ -1,6 +1,6 @@
 package com.cursos.api.spring_security.persistence.util;
 
-public enum RolePermission {
+public enum RolePermissionEnum {
 
 //LOS SIGUIENTES SON "authorities". NO ES LO MISMO QUE UN ROL. UN ROL SE CONFORMA DE DIVERSOS "authorities".
     READ_ALL_PRODUCTS,

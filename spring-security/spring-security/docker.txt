@@ -1,0 +1,58 @@
+PRIMERO HAY QUE DESCARGAR DOCKER / PUEDES DESPUÉS DESCAGAR ALGUN PLUGIN EN TU IDE PARA VISUALIZAR DOCKER DIRECTAMENTE AHI.
+TODOS LOS COMANDOS LOS PUEDES EJECUTAR EN LA CMD O EN LA TERMINAL DEL IDE / ALGUNOS COMANDOS SE PUEDEN NO EJECUTAR, PUES PUEDES REALIZAR CIERTAS TAREAS DESDE LA INTERFAZ DE DOCKER, COMO "START"
+NO HAY QUE CONFUNDIR LOS COMANDOS PROPIOS DE DOCKER, CON LOS COMANDOS QUE YA PUEDES EJECUTAR DENTRO DE LOS CONTENEDORES, QUE YA SON COMO SERVIDORES LINUX.
+
+Una IMAGEN en Docker es como una clase de Java. Es un paquete que contienen todo lo necesario para que la aplicación se ejecute. Se crean a partir de un archivo docker file.
+docker pull *****---> Descarga una imagen desde Docker Hub. (Ejemplo: docker pull mysql). Todas las imagenes junto con sus comandos especificos los puedes encontrar en Docker Hub(https://hub.docker.com)
+
+Un CONTENEDOR es la instancia de una imagen. Es practicamente un servidor Linux completamente aislado en el que corre una aplicación: varios contenedores pueden estar usando el mismo puerto. No afecta a otras aplicciones aunque estén corriendo en la misma máquina. 
+Estos contenedores tienen todo lo necesario para que la aplicación se ejecute, incluyendo sistema de archivos del sistema operativo correspondiente.
+Sirve para CICD. El mismo contenedor se despliega desde DEV a PROD.
+docker run ****** ---> Se ejecuta la imagen ya como contenedor. Crea un nuevo contenedor. Si lo ejecutas varias veces, crerás varios contenedores. No puedes crear contenedores con el mismo nombre.
+(docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=password mysql) --> Se está creando un contendor de la imagen mysql. El nombre del contenedor será my-mysql. La contraseña para acceder a la bd(es una imagen de MySQL), será password. Cada imagen tiene sus propias banderas. Si la imagen no existe de forma local, se descargará.
+(docker run -e MYSQL_ROOT_PASSWORD=password mysql)---> Si no le pones nombre, Docker se lo pone por defecto. Siempre generará un contenedor diferente.  
+(docker run -d -e MYSQL_ROOT_PASSWORD=password mysql) --> Para generar un contenedor diferente, pero para poder seguir ejecutando comandos en la cmd(-d).
+(docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=course -d mysql:5.7) --> Para hacer referencia a una imagen de una versión determinada (mysql:5.7).
+(docker run --name my-mysql -p 3308:3306 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=course -d mysql) --> Hay que recordar que un contenedor es practicamente un servidor Linux completamente aislado en el que corre una aplicación. Esta aislado incluso de la maquina en la que se encuentra. Por eso, una aplicacion que este usando docker como su BD, intetará hacer conexión al puerto pero del host en el que está docker, no al del contenedor. Por eso hay que redirigir el trafico desde el puerto del host hacia el puerto del contenedor(-p 3308:3306). El 3308 es el puerto del host y 3306 es el del contenedor; 3308 es el que debemos usar en la aplicación.
+(docker start my-mysql)  --> Para levantar un contenedor ya existente. Ya no correría en el IDE con su server, sino en Docker.
+(docker build -t my-app:v1 .)--> Para crear una imagen apartir de una aplicación. Hay que crear antes el archivo Dockerfile dentro del proyecto SpringBoot y recompilar la aplicación. Es tanto como instalar tu aplicación compilada en un servidor Linux y generar su imagen, pero con la posibilidad de mover libremente todo esa imagen y correrla en cualquier host. Es importante mencionar que las imágenes son inmutables. Por eso, si hay algun cambio en el código, debes primero compilar y luego crear otra imagen. 
+
+ALGUNOS COMANDOS(Se pueden ejecutar en la cmd):
+docker ps --> Muestra contenedores en ejecucion.
+docker stop (id o nombre del contenedor) --> Detiene un contenedor.
+docker rm (id del contenedor) --> Elimina el contenedor.
+docker exec my-mysql ls  --> "docker exec" sirve para  ejecutar comandos linux (docker exec -it my-mysql bash  --> Te va a abrir una consola interactiva de Linux)
+docker logs my-mysql --> "docker logs" sirve para pedir los logs del contenedor.
+
+PUEDES EJECUTAR COMANDOS LINUX EN EL CONTENEDOR RESPECTIVO, ARBRIENDO SU CLI DESDE DOCKER.
+
+docker images
+docker rmi
+
+mysql -u root -p
+
+Los "VOLUMENES" nos permiten guardar(persistir) la informacion que vayamos generando dentro de nuestros contenedores. No se borra al apagar el contenedor.
+(docker run --name my-mysql-with-volume -d -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=course -v my-volume:/var/lib/mysql mysql:5.7)
+
+REDES
+Las redes sirven para conectar 2 contenedores. Ejemplo: si hay un contenedor con base de datos, y un contenedor con una aplicacion que requiere conectarse a esa bd. La creación de una red se necesita, debido a que, hay que recordar, los contenedores estan completamente aislados. Entonces hay que colocar ambos contenedores dentro de una misma red:
+(docker network create mi-red) --> Se crea la red.
+(docker network connect mi-red my-app-container-docker) --> Se agrega el contenedor de la aplicación a la red.
+(spring.datasource.url=jdbc:mysql://my-mysql:3306/course) --->  En el application.properties debe agreagrarse como conexion a la bd un dns que lleve por nombre el contenedor de la bd.
+(docker network connect mi-red my-mysql) --> Se agrega el contenedor de la bd a la red. 
+Luego, primero debe levatarse el contenedor de la bd y luego el contenedor de la aplicación.
+(docker network ls) ---> Para ver las redes existentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
