@@ -1,0 +1,33 @@
+#Aqui hay 2 contenedores agrupados: my-mysql-docker-compose y my-app-container-docker-compose)
+
+version: '3.1'
+
+services:   #Los servicios son los contenedores que se agrupan en Docker Compose. Tienen el noombre que nosotros queramos(db, my-app).
+  db:
+    image: mysql:8.4  #nombre de la imagen a usar para este contenedor.
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: course
+    container_name: my-mysql-docker-compose #Este contenedor ya está creado. Por eso no usamos la clave build, como sí lo hacemos en el siguiente contenedor.
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    networks:
+      - my_network_compose   # Red en la que se encontrará este contenedor.
+
+  my-app:
+    build: .  # Para construir este contenedor(en este caso no está creado) debe basarse en el Dockerfile que está en esta misma ruta.
+    image: my-app-docker:v2
+    ports:
+      - 8585:9191
+    container_name: my-app-container-docker-compose
+    depends_on:    # Depende del contenedor anterior. Debe iniciarse hasta que se inicie el anterior.
+      - db
+    networks:
+      - my_network_compose   # Red en la que se encontrará este contenedor.
+
+volumes:
+  mysql-volume:
+
+networks:
+  my_network_compose:

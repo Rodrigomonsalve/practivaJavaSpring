@@ -42,6 +42,7 @@ Las redes sirven para conectar 2 contenedores. Ejemplo: si hay un contenedor con
 (docker network connect mi-red my-mysql) --> Se agrega el contenedor de la bd a la red. 
 Luego, primero debe levatarse el contenedor de la bd y luego el contenedor de la aplicación.
 (docker network ls) ---> Para ver las redes existentes.
+(docker network inspect [nombre de red]) --> Sirve para saber qué contenedores se encuetran dentro de la red. Sólo se muestran los contenedores que estén corriendo.
 
 
 

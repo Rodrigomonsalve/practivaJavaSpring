@@ -8,3 +8,5 @@ COPY target/*.jar app.jar
 
 #ENTRYPOINT sirve para especificar el primer comando que se ejecutará en el contenedor para ejecutar el .jar: java -jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
+
+#Al final ejecutas "docker build -t my-app:v1 ." estando dentro del proyecto.
