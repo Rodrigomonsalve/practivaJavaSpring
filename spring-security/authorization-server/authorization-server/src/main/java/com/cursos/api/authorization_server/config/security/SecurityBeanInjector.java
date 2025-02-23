@@ -1,7 +1,7 @@
-package com.cursos.api.spring_security.config.security;
+package com.cursos.api.authorization_server.config.security;
 
-import com.cursos.api.spring_security.exceptions.ObjectNotFoundException;
-import com.cursos.api.spring_security.persistence.repository.security.UserRepository;
+import com.cursos.api.authorization_server.exception.ObjectNotFoundException;
+import com.cursos.api.authorization_server.repository.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,31 +12,16 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 //EN ESTA CLASE SE REGISTRAN BEANS QUE SERÁN USADOS INTERNAMENTE POR SPRING SECURITY. SE CREAN Y REGISTRAN DESDE QUE SE LEVANTA EL SERVUDOR, INCLUSO ANTES DE LA CREACION DE LOS FILTROS.
 //PRINCIPALMENTE SIRVE PARA VALIDAR CREDENCIALES DEL USUARIO.
-//SI USAMOS OAUTH2 LA RESPONSABILIDAD DE VALIDAR LA AUTENTICACION DEL USUARIO ES SOLAMENTE DEL AUTHORIZATION SERVER. YA NO DE LA APLICACION.L
+//SI USAMOS OAUTH2 LA RESPONSABILIDAD DE VALIDAR LA AUTENTICACION DEL USUARIO ES SOLAMENTE DEL AUTHORIZATION SERVER. YA NO DE LA APLICACION.
 @Configuration
 public class SecurityBeanInjector {
 
     @Autowired
     private UserRepository userRepository;
 
-    /*@Autowired
-    private AuthenticationConfiguration authenticationConfiguration;*/
-
-
-    //AuthenticationManager ES UNA INTERFAZ ENCARGADA DE MANEJAR LA AUTENTICACION DE LOS USUARIOS. SU FUNCION ES ESENCIAL: ES LA QUE VERIFICA LAS CREDENCIALES PROPORCIONADAS POR UN USUARIO.
-    //SI LAS CREDENCIALES COINCIDEN DEVUELVE UN OBJETO authentication; SI NO, DEVUELVE UN OBJETO AuthenticationException.
-    //EN ESTE MÉTOD LO UNICO QUE ESTAMOS HACIENDO ES OBTENER EL AuthenticationManager CONFIGURADO.
-    //AuthenticationManager DELEGA SU TAREA A AuthenticationProvider.
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
-
-        System.out.println("Este es el authenticationConfiguration.getAuthenticationManager en authenticationManager: "+authenticationConfiguration.getAuthenticationManager());
-        System.out.println("Este es el authenticationConfiguration en authenticationManager: "+authenticationConfiguration);
-
-       return authenticationConfiguration.getAuthenticationManager();   //EL OBJETO RETORNADO SIRVE PARA VALIDAR(AUTENTICAR) A USUARIOS YA RESGITRADOS. SE USA DENTRO DEL METODO Login AuthenticationService.
-    }
 
     @Bean
     public AuthenticationProvider authenticationProvider(){
@@ -56,12 +41,16 @@ public class SecurityBeanInjector {
     @Bean
     public PasswordEncoder passwordEncoder(){
 
+        System.out.println("Entrando en passwordEncoder");
         return new BCryptPasswordEncoder();  //CUANDO UN USUARIO INGRESA SU CONTRASEÑA, LA HASHEA Y LA COMPARA CON EL HASH ALMACENADO EN LA BASE DE DATOS COMO CONTRASEÑA. USA EL ALGORITMO BCrypt. RESISTE ATAQUES DE FUERZA BRUTA. ES EL MAS SEGURO AL DIA DE HOY.
     }                                       //HAY OTROS TIPOS: Pbkdf2PasswordEncoder, Argon2PasswordEncoder, SCryptPasswordEncoder, NoPasswordEncoder, StandardPasswordEncoder
 
+
+    //METODO ESENCIAL. BUSCA AL USUARIO EN LA BASE DE DATOS CUANDO INTENTA HACER LOGIN.
     @Bean
     public UserDetailsService userDetailsService(){
 
+        System.out.println("Entrando en userDetailsService");
         return ((username) -> {
             return userRepository.findByUsername(username).orElseThrow(()->new ObjectNotFoundException("User not found with username "+username));
         });

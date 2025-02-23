@@ -1,6 +1,8 @@
 Validaciones de apis en SpringBoot:
 Las versiones dependen de la version de SprinBoot que estemos usando(2.x, 3.x).
-	spring-boot-starter-validation 3.3.8
+
+	SON LAS COMPATIBLES ENTRE SÍ:
+	spring-boot-starter-validation 3.3.8 (Significa que estamos usando Spring Boot 3.3.8)
 	hibernate-validator 8.0.2.Final
 	jakarta.validation-api 3.0.2
 	jakarta.el 4.0.2

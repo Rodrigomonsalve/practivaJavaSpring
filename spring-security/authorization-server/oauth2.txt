@@ -1,0 +1,113 @@
+OAUTH
+
+Open Authorized es un estandar abierto para la AUTORIZACION que permite a APLICACIONES acceder a recursos en nombre de un usuario sin necesidad de compoartir credenciales(usuario y contraseña).
+
+ELEMENTOS:
+1) CLIENTE: Aplicación que solicita acceso a recursos protegidos. Genera una url de autorización(despues de que el usuario da click en "Iniciar sesion con xxxx"), luego redirige a ella para AUTENTICARSE, y luego, si es exitoso, redirige al login del Authorization Server. Abajo hay un ejemplo. oauthdebugger.com simula ser una aplicación cliente. oauthdebugger.com sirve para probar el funcionamiento del Authorization Server, y solamente hasta la primera parte de su flujo(generación del Access Token).  
+2) AUTHORIZATION SERVER: Servicio que autentica al usuario y emite tokens de acceso.  Es quien te pide ingresar credenciales y posteriormente emite el access token. El Authorization Server'es el código que creamos. Hay de diferentes tipos:
+-- Servicios de terceros, como Google OAuth2.0, Facebook Login, GitHub OAuth, Auth0, PingFederate.
+-- Authorization Servers dentro de empresas como Keycloak, OAuth Server, WS02 Identity Server.
+-- Authorization server en un backend propio como Spring Authorization Server en Java, IdentityServer en .NET, Node.js con Auth2orize.
+3) PROPIETARIO DEL RECURSO: Usuario que da permiso para que el cliente acceda a sus recursos.
+4) ACCESS TOKEN: Identificador que permite al cliente acceder a los recursos en nombre del usuario.
+5) SCOPE: Son permisos que definen lo que un CLIENTE puede hacer. Estan inculuidos en el access token.
+
+Hay varios flujos de oauth2:
+1) AUTHORIZATION CODE FLOW. Es el mas usado y el que usamos en el ejercicio. El usuario se autentica y recibe un código de autorización que luego se intercambia por un un token de acceso.
+2) IMPLICIT FLOW. Obsoleto.
+3) CLIENT CREDENTIALS FLOW.
+4) RESOURCE OWNER PASSWORD CREDENTIALS FLOW.
+5) DEVICE AUTHORIZATION FLOW.
+
+EJEMPLO DE URL DE AUTENTICACIÓN QUE GENERA EL CLIENTE:
+En pruebas, se genera con ayuda de oauthdebugger.com. Los datos los colocamos en ese sitio manualmente. En la vida real se deben registrar esos datos en el Authorization-Server y la url de autenticacion la debe generar la aplicación cliente(la lógica debe estar del lado de la aplicación cliente). ESTA EL LA FINALIDAD DE OUATHDEBUGGER: GENERAR LA URL DE AUTENTICACIÓN PARA PROBAR AL AUTHORIZATION SERVER SIN NECESIDAD DE DESARROLLAR CÓDIGO DENTRO DE LA APLICACIÓN CLIENTE.
+    http://localhost:9595/authorization-server/oauth2/authorize	-----> URL DE AUTENTICACIÓN. CADA TIPO DE AUTHORIZATION SERVER TIENE SU PROPIO ENDPOINT YA DEFINIDO(HAY QUE INVESTGARLO). EN EL CASO DE SPRING SECURITY SERVER ES /oauth2/authorize. GOOGLE TIENE: https://accounts.google.com/o/oauth/v2/auth
+            ?client_id=client
+            &redirect_uri=https://oauthdebugger.com/debug	-----> EN LA VIDA REAL DEBE IR LA URL DE EL CLIENTE (APLICACIÓN) A LA QUE VAMOS A REDIRIGIR
+            &scope=openid READ_ALL_PRODUCTS			-----> SCOPE NO ES LO MISMO QUE AUTHORITIES. DA ERROR 403 CUANDO EL USUARIO TIENE MENOS AUTHORITIES QUE EL SCOPE(se podría decir que el usuario intenta realizar mayores acciones que las que tiene permitidas); Y EL USUARIO PUEDE REALIZAR ACCIONES NO DESEADAS CUANDO TIENE MENOS SCOPE QUE AUTHORITIES(se podría decir que el usuario intenta realizar menores acciones que las que tiene permitidas, pero no la adecuada). SCOPE Y AUTHORITIES DEBEN ESTAR MAPEADOS IGUAL.
+            &response_type=code
+            &response_mode=form_post
+            &state=vzbp7ce7d6h					-----> VALORES ALEATORIOS QUE GENERA EL CLIENTE (APLICACIÓN) 
+            &nonce=9d6o4m6g9a					-----> VALORES ALEATORIOS QUE GENERA EL CLIENTE (APLICACIÓN)
+
+ 
+ESTA ES LA URL A LA QUE REDIRIGE EL CLIENTE (APLICACIÓN). ES LA URL DEL AUTHORIZATION SERVER:
+http://localhost:9595/authorization-server/login		-----> ES LA PAGINA DE LOGIN QUE CREAMOS EN EL CÓDIGO DEL AUTHORIZATION-SERVER.
+
+ESTA ES LA URL A LA QUE REDIRIGE EL AUTHORIZATION SERVER SI COLOCAMOS CREDENCIALES CORRECTAS:
+En la vida real, redirige a la aplicación generando antes el access token.
+https://oauthdebugger.com/debug?code=KHUPhEsRTvmJZ_kVKLA5Cesavow9490m4NflP78OZzGHdy-XeiBg_9VmefF6f_ttpvRPLIkj7L45l71qIPDajk2z_UOXld71a3b9pegMpwWP_A2g_cL71FsrJNaulqn3&state=ntpjxlysbq
+
+EJEMPLO DE AUTHORIZATION CODE: 
+KHUPhEsRTvmJZ_kVKLA5Cesavow9490m4NflP78OZzGHdy-XeiBg_9VmefF6f_ttpvRPLIkj7L45l71qIPDajk2z_UOXld71a3b9pegMpwWP_A2g_cL71FsrJNaulqn3
+
+LUEGO, PROBAMOS EL FLUJO COMPLETO YA QUE TENEMOS EL ACCESS-TOKEN. ESTO LO HACEMOS EN POSTMAN:
+Colocamos: localhost:9595/authorization-server/oauth2/token
+
+CREAMOS EN EL BODY, LOS SIGUIENTES VALORES:
+     grant-type: authorization-code
+     client-id: client
+     redirect-uri: https://oauthdebugger.com/debug
+     code: [mismo que el AUTHORIZATION CODE]
+
+VA A GENERAR EL SIGUIENTE JSON:
+     {
+        "access_token": "eyJraWQiOiI1MjFkMWEyMC1kZjljLTQ2ZjEtYTkyOC1hMDNmYzg1NzA4MmQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJtaGVybmFuZGV6IiwiYXVkIjoiY2xpZW50IiwibmJmIjoxNzM5OTQ5NDQ5LCJzY29wZSI6WyJvcGVuaWQiLCJSRUFEX0FMTF9QUk9EVUNUUyJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojk1OTUvYXV0aG9yaXphdGlvbi1zZXJ2ZXIiLCJleHAiOjE3Mzk5NTAwNDksImlhdCI6MTczOTk0OTQ0OX0.1vvYY3k6ViMfJyXJWN80AO6o0-cJ9uAbdzAnjllYBSkkIV-7s8iMcFcq9crnZWNteZ0N5oKxkg6Vhr5YmI0cUWl07rdDcCKC7JLKn4pRWOMRoQ-CwJOnLzWbZobP8AiuhBqCUwtEXC15JY1_3oyjKY5ik2h2Mm8_DannjMJat4L4FT6DhxwK1cuLdDGdi28gAiZEH0cys8m-Jjd6ftageI7EzRf0KTQhdkTCeAsGW6vWqu3XnBjqHHX_Nem-_Krcgq18F3Z9NyRAxV2VbLmbL6A38SmyFat6c6Q0XOyjj7_rhiTYLST9pXxPG40q3afN1WoWv-RA3AXD5GD7jQXg7w",
+        "refresh_token": "WkG9gRhCN35HH7NcSAn5pVK2MfTMcG_YeGfVpDeZhkRXX2P9y1uFq3JkGsrRsB1qbcc4I40KYmyVNU3YrTyiyce2HumQZ_4l-D0Nz-pvENY52nGmSxHkeh2GHSrrag7h",
+        "scope": "openid READ_ALL_PRODUCTS",
+        "id_token": "eyJraWQiOiI1MjFkMWEyMC1kZjljLTQ2ZjEtYTkyOC1hMDNmYzg1NzA4MmQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJtaGVybmFuZGV6IiwiYXVkIjoiY2xpZW50IiwiYXpwIjoiY2xpZW50IiwiYXV0aF90aW1lIjoxNzM5OTQ5MzkzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojk1OTUvYXV0aG9yaXphdGlvbi1zZXJ2ZXIiLCJleHAiOjE3Mzk5NTEyNDksImlhdCI6MTczOTk0OTQ0OSwibm9uY2UiOiJ4azBvbjJsYmg4aSIsInNpZCI6ImxTRHkxUDFkZkkxVDF2VXoxbVVsaHpXdjZFYUdreXNudHNhRFVjYkFuaVkifQ.209vXfX3H5tb3H9BBbGn12_Xx9T3QrsznceEgPDYqejdxaFcW5rsY4oC844iS94-FVNEffetxRXy_AYJf_UIAwXk6CwtV_U7PWaxIJCPc2KE0cgsKGfxPkycgMJfPw7XLeCCHZ72RBr3C5vIan4k9zfQ62nb8CIIy8pTlZgz4Z9NrlAH4qMEmJ_PXBCLbz9dNpKXfwTtdPDOnWFHVrlseVpaRY-hFyk6f_LQtzV3mDnGr05esOEXNg2mPGVKRdcUiUuIPa1dChi3BRfv_i199YVIO5EdAFz9Zh23k523nNjVTOyacvEjgcsSsnOyBrl9g-TtDQfzcdcuyr8nebnNpw",
+        "token_type": "Bearer",
+        "expires_in": 599
+    }
+
+
+EL ACCESS TOKEN TIENE EL SIGUIENTE VALOR:
+    
+    {
+      "kid": "521d1a20-df9c-46f1-a928-a03fc857082d",
+      "alg": "RS256"
+    }
+    {
+      "sub": "mhernandez",
+      "aud": "client",
+      "nbf": 1739952011,
+      "permissions": [
+        "READ_ALL_PRODUCTS",
+        "READ_ONE_PRODUCT",
+        "CREATE_ONE_PRODUCT",
+        "UPDATE_ONE_PRODUCT",
+        "DISABLE_ONE_PRODUCT",
+        "READ_ALL_CATEGORIES",
+        "READ_ONE_CATEGORY",
+        "CREATE_ONE_CATEGORY",
+        "UPDATE_ONE_CATEGORY",
+        "DISABLE_ONE_CATEGORY",
+        "READ_MY_PROFILE",
+        "ROLE_ADMINISTRATOR"
+      ],
+      "scope": [
+        "openid",
+        "READ_ALL_PRODUCTS"
+      ],
+      "iss": "http://localhost:9595/authorization-server",
+      "exp": 1739952611,
+      "iat": 1739952011
+    }
+
+EL ID_TOKEN TIENE LOS SIGUIENTES VALORES:
+    
+    {
+      "kid": "521d1a20-df9c-46f1-a928-a03fc857082d",
+      "alg": "RS256"
+    }
+    {
+      "sub": "mhernandez",
+      "aud": "client",
+      "azp": "client",
+      "auth_time": 1739949393,
+      "iss": "http://localhost:9595/authorization-server",
+      "exp": 1739951249,
+      "iat": 1739949449,
+      "nonce": "xk0on2lbh8i",
+      "sid": "lSDy1P1dfI1T1vUz1mUlhzWv6EaGkysntsaDUcbAniY"
+    }

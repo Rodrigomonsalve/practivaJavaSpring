@@ -43,6 +43,12 @@ Las redes sirven para conectar 2 contenedores. Ejemplo: si hay un contenedor con
 Luego, primero debe levatarse el contenedor de la bd y luego el contenedor de la aplicación.
 (docker network ls) ---> Para ver las redes existentes.
 (docker network inspect [nombre de red]) --> Sirve para saber qué contenedores se encuetran dentro de la red. Sólo se muestran los contenedores que estén corriendo.
+(docker network connect  [nombre de red] [nombre del contenedor])--> Sirve para agregar un contenedor a una red.
+
+DOCKER COMPOSE:
+Se crean con base en un archivo docker-compose.yml, que se crea dentro del proyecto de la aplicación SpringBoot.
+Sirven para facilitar la administración de varios contenedores de forma simultánea agrupados en una misma red.
+(docker-compose up --build -d)--> Se levantan todos los contenedores que se mencionan en el docker-compose.yml
 
 
 

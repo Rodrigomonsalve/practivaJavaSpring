@@ -26,7 +26,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity  //La anotacion @EnableWebSecurity sirve para habilitar las configuraciones de seguridad web. Entre otas coas, habilita los filtros de seguridad predeterminados.
 //@EnableMethodSecurity(prePostEnabled = true) //Sirve para habilitar la autorizacion "con base en metodos". prePostEnabled habilita las anotaciones @PreAuthorize y @PostAuthorize. Si utilizas autorizacion basada en coincidencias de urls, esta anotacion no debe ir.
 public class HttpSecurityConfig {
 
